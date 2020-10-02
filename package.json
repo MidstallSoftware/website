@@ -1,0 +1,27 @@
+{
+  "name": "@midstall/website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MidstallSoftware/website.git"
+  },
+  "author": "Tristan Ross",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/MidstallSoftware/website/issues"
+  },
+  "homepage": "https://github.com/MidstallSoftware/website#readme",
+  "dependencies": {
+    "nuxt": "^2.14.6"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.11.2"
+  }
+}
