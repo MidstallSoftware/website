@@ -11,7 +11,10 @@
 <script>
 export default {
   head: {
-    title: 'Home'
+    title: 'OpenMic',
+    meta: [
+      { hid: 'description', name: 'description', content: 'OpenMic is a real-time voice effect software developed by Midstall Software.' }
+    ]
   }
 }
 </script>
