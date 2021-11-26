@@ -6,7 +6,7 @@
 				<v-card-text>
 					<p>Hello, I am one of the original founders of this company. I started this back in October of 2020 and brough my good friend and business partner, Travis, on board. I am largely responsible for the vision of ExpidusOS and making it possible.</p>
 					<p>E-Mail: <a href="mailto:tristan.ross@midstall.com" class="text--primary">tristan.ross@midstall.com</a></p>
-					<p>Online User Name: The Computer Guy</p>
+					<p>Online Username: The Computer Guy</p>
 					<v-img :src="require('~/assets/img/team/tristan.jpg')" aspect-ratio="1.7"></v-img>
 				</v-card-text>
 			</v-card>
@@ -16,7 +16,7 @@
 				<v-card-title>Travis Brinkhert</v-card-title>
 				<v-card-text>
 					<p>E-Mail: <a href="mailto:travis.brinkhert@midstall.com" class="text--primary">travis.brinkhert@midstall.com</a></p>
-					<p>Online User Name: drag0</p>
+					<p>Online Username: drag0</p>
 					<v-img :src="require('~/assets/img/team/travis.jpg')" aspect-ratio="1.7"></v-img>
 				</v-card-text>
 			</v-card>
@@ -25,8 +25,9 @@
 			<v-card>
 				<v-card-title>Nathan Ritchie</v-card-title>
 				<v-card-text>
-					<p>Hello, I do UI Concepts and Design.</p>
-					<p>Online User Name: ctaetcsh</p>
+					<p>I have worked on Midstall projects off-and-on for about a year. I work on design/web stuff and make UI concepts. </p>
+					<p>Online Username: ctaetcsh</p>
+					<p>Personal Website: <a href="https://ctaetcsh.com" class="text--primary" >ctaetcsh.com</a></p>
 				</v-card-text>
 			</v-card>
 		</v-col>
@@ -34,7 +35,7 @@
 			<v-card>
 				<v-card-title>Carter Kelso</v-card-title>
 				<v-card-text>
-					<p>Online User Name: Oof Large</p>
+					<p>Online Username: Oof Large</p>
 				</v-card-text>
 			</v-card>
 		</v-col>
