@@ -40,6 +40,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
       - name: Deploy Docker Image via SSH
         uses: JimCronqvist/action-ssh@master
-        with: "ci@45.79.103.133"
-        privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
-        command: sudo systemctl restart docker-midstall
+        with:
+          hosts: "ci@45.79.103.133"
+          privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
+          command: sudo systemctl restart docker-midstall
