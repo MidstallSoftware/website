@@ -29,9 +29,11 @@
 				<v-card-title>Nathan Ritchie</v-card-title>
 				<v-card-text>
 					<p>I have worked on Midstall projects off-and-on for about a year. I work on design/web stuff and make UI concepts. </p>
-					<p class="align-self-start">Position: UI Design</p>
+					<p class="align-self-start">Position: UX Design/Web Development</p>
+					<p class="align-self-start">E-Mail: <a href="mailto:nathan.ritchie@midstall.com" class="text--primary">nathan.ritchie@midstall.com</a></p>
 					<p>Online Username: ctaetcsh</p>
 					<p>Personal Website: <a href="https://ctaetcsh.com" class="text--primary" >ctaetcsh.com</a></p>
+					<v-img :src="'https://cdn.ctaetcsh.com/img/ctaetcshfull.png'" aspect-ratio="1" class="align-self-end" width="100%" height="100%"></v-img>
 				</v-card-text>
 			</v-card>
 		</v-col>
