@@ -26,7 +26,7 @@
 						</a>
 					</v-list-item>
 					<v-list-item link>
-						<a class="text--primary" href="/products/expidus">
+						<a class="text--primary" href="/products/argama">
 							Project Argama
 						</a>
 					</v-list-item>
