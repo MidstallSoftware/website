@@ -14,7 +14,7 @@
 		</v-col>
 		<v-col cols="12" sm="12" md="6" lg="3" xl="3" class="align-self-stretch">
 			<v-card class="align-self-stretch" style="height: 100%">
-				<v-card-title>Travis Brinkhert</v-card-title>
+				<v-card-title>Travis Brinkert</v-card-title>
 				<v-card-text class="d-flex flex-column align-end" height="100%">
 					<p class="align-self-start">Hello, I am the other founder of this company.</p>
 					<p class="align-self-start">Position: CEO</p>
