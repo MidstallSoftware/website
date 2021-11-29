@@ -41,7 +41,7 @@ jobs:
       - name: Deploy Docker Image via SSH
         if: github.event_name != 'pull_request'
         uses: appleboy/ssh-action@master
-        with:
+        env:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
