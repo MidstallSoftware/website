@@ -33,7 +33,7 @@
 					<p class="align-self-start">E-Mail: <a href="mailto:nathan.ritchie@midstall.com" class="text--primary">nathan.ritchie@midstall.com</a></p>
 					<p>Online Username: ctaetcsh</p>
 					<p>Personal Website: <a href="https://ctaetcsh.com" class="text--primary" >ctaetcsh.com</a></p>
-					<v-img :src="'://cdn.ctaetcsh.com/img/ctaetcshfull.png'" aspect-ratio="1" class="align-self-end" width="100%" height="100%"></v-img>
+					<v-img :src="'https://cdn.ctaetcsh.com/img/ctaetcshfull.png'" aspect-ratio="1" class="align-self-end" width="100%" height="100%"></v-img>
 				</v-card-text>
 			</v-card>
 		</v-col>
