@@ -2,7 +2,7 @@
 	<div class="main-container">
 	  <v-row justify="center" align="start">
 			<v-col order="2" order-md="1" cols="12" md="3" lg="3" xl="3">
-				<v-row justify="center" align="start">
+				<v-row justify="center" justify-md="start" align="start">
 					<v-col cols="12">
 						<h1>Our Products</h1>
 					</v-col>
@@ -38,7 +38,7 @@
 				</v-parallax>
 			</v-col>
 			<v-col order="3" cols="12" md="3" lg="3" xl="3">
-				<v-row justify="center" align="start">
+				<v-row justify="center" justify-md="start" align="start">
 					<v-col cols="12">
 						<h1>News</h1>
 					</v-col>
@@ -95,7 +95,9 @@
 			</v-col>
 			<v-col order="3" cols="12" md="3" lg="3" xl="3">
 				<v-row justify="center" justify-md="start" align="start">
-					<h1>Sites we're on</h1>
+					<v-col cols="12">
+						<h1>Sites we're on</h1>
+					</v-col>
 				</v-row>
 				<v-row>
 					<v-col cols="12">
