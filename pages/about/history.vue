@@ -43,9 +43,11 @@
 <script>
 export default {
 	head: {
-		title: 'About',
+		title: 'History',
 		meta: [
-      { hid: 'description', name: 'description', content: 'About Midstall Software' }
+			{ hid: 'og:title', name: 'og:title', content: 'History | Midstall Software' },
+      { hid: 'description', name: 'description', content: 'All the events from the inception of the company to the present.' },
+			{ hid: 'og:description', name: 'og:description', content: 'All the events from the inception of the company to the present.' }
 		]
 	}
 }

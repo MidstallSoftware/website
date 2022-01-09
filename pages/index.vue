@@ -107,7 +107,10 @@ export default {
 		}
 	},
 	head: {
-		title: 'Home'
+		title: 'Home',
+		meta: [
+			{ hid: 'og:title', name: 'og:title', content: 'Home | Midstall Software' }
+		]
 	}
 }
 </script>

@@ -187,7 +187,9 @@ export default {
 	head: {
 		title: 'About',
 		meta: [
-      { hid: 'description', name: 'description', content: 'About Midstall Software' }
+			{ hid: 'og:title', name: 'og:title', content: 'About | Midstall Software' },
+      { hid: 'description', name: 'description', content: 'About the company, Midstall Software, from sites we\'re on to the people behind the scenes.' },
+			{ hid: 'og:description', name: 'og:description', content: 'About the company, Midstall Software, from sites we\'re on to the people behind the scenes.' }
 		]
 	}
 }
