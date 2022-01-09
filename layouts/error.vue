@@ -1,8 +1,8 @@
 <template>
   <v-app dark>
-		<v-main style="padding-top: 16px">
+		<v-main>
 			<v-row justify="center" align="center">
-				<v-col cols="12" sm="8" md="6">
+				<v-col cols="12" md="6" lg="6" style="padding-top: 25px">
 					<v-card>
 				    <v-card-title>
 							<span v-if="error.statusCode === 404">

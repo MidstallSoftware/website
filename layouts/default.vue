@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-		<v-app-bar class="d-md-block d-lg-block d-xl-block d-none" dense hide-on-scroll>
+		<v-app-bar class="d-md-block d-lg-block d-xl-block d-none" dense elevate-on-scroll fixed>
 			<v-toolbar-title>Midstall Software</v-toolbar-title>
 			<v-spacer />
 
@@ -48,15 +48,10 @@
 							History
 						</a>
 					</v-list-item>
-					<v-list-item link>
-						<a class="text--primary" href="/about/team">
-							Team
-						</a>
-					</v-list-item>
 				</v-list>
 			</v-menu>
 		</v-app-bar>
-		<v-app-bar class="d-sm-block d-md-none d-lg-none d-xl-none d-block" dense hide-on-scroll>
+		<v-app-bar class="d-sm-block d-md-none d-lg-none d-xl-none d-block" dense elevate-on-scroll fixed>
 			<v-app-bar-nav-icon @click="drawer = !drawer" />
 			<v-toolbar-title>Midstall Software</v-toolbar-title>
 		</v-app-bar>
@@ -75,17 +70,25 @@
 					<v-list-group>
 						<template v-slot:activator>
 							<v-list-item-content>
-								<v-list-item-title>Products</v-list-item-title>
+								<v-list-item-title>
+									<v-btn elevation="0">
+										Products
+									</v-btn>
+								</v-list-item-title>
 							</v-list-item-content>
 						</template>
 						<v-list-item link>
 							<a class="text--primary" href="/products/expidus">
-								ExpidusOS
+								<v-btn elevation="0">
+									ExpidusOS
+								</v-btn>
 							</a>
 						</v-list-item>
 						<v-list-item link>
 							<a class="text--primary" href="/products/argama">
-								Project Argama
+								<v-btn elevation="0">
+									Project Argama
+								</v-btn>
 							</a>
 						</v-list-item>
 					</v-list-group>
@@ -94,17 +97,18 @@
 					<v-list-group>
 						<template v-slot:activator>
 							<v-list-item-content>
-								<v-list-item-title>About</v-list-item-title>
+								<v-list-item-title>
+									<v-btn elevation="0">
+										About
+									</v-btn>
+								</v-list-item-title>
 							</v-list-item-content>
 						</template>
 						<v-list-item link>
 							<a class="text--primary" href="/about/history">
-								History
-							</a>
-						</v-list-item>
-						<v-list-item link>
-							<a class="text--primary" href="/about/team">
-								Team
+								<v-btn elevation="0">
+									History
+								</v-btn>
 							</a>
 						</v-list-item>
 					</v-list-group>
@@ -112,29 +116,31 @@
 			</v-list>
 		</v-navigation-drawer>
 		<v-main>
-			<Nuxt />
+			<div class="main-container">
+				<Nuxt />
+			</div>
 		</v-main>
     <v-footer absolute app>
 			<v-card flat tile class="text-center" width="100%">
 				<div class="d-inline">
 					<v-card-text class="d-inline">
-						<a class="text--primary mx-4" href="/open-source">
+						<a class="text--primary mx-4" href="/">
 							<v-btn elevation="0">
-								Open Source
+								Home
 							</v-btn>
 						</a>
 					</v-card-text>
 					<v-card-text class="d-inline">
-						<a class="text--primary mx-4" href="/jobs">
+						<a class="text--primary mx-4" href="/about">
 							<v-btn elevation="0">
-								Jobs
+								About
 							</v-btn>
 						</a>
 					</v-card-text>
 					<v-card-text class="d-inline">
-						<a class="text--primary mx-4" href="/contact">
+						<a class="text--primary mx-4" href="/supporting">
 							<v-btn elevation="0">
-								Contact
+								Support Us
 							</v-btn>
 						</a>
 					</v-card-text>
@@ -155,3 +161,11 @@ export default {
 	}
 }
 </script>
+<style>
+div.main-container {
+	padding-top: 45px;
+	padding-bottom: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+</style>
