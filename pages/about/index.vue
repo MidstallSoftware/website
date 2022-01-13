@@ -70,7 +70,7 @@
 									<v-list-item-subtitle class="text-overline mb-4">
 										<p v-if="member.positions.length > 1">Positions: {{ member.positions.join(', ') }}</p>
 										<p v-else>Position: {{ member.positions[0] }}</p>
-										<p>E-Mail: <a :href="'mailto:' + member.name.split(' ').join('.').toLowerCase()" class="text--primary">{{ member.name.split(' ').join('.').toLowerCase() }}@midstall.com</a></p>
+										<p>E-Mail: <a :href="'mailto:' + member.name.split(' ').join('.').toLowerCase() + '@midstall.com'" class="text--primary">{{ member.name.split(' ').join('.').toLowerCase() }}@midstall.com</a></p>
 									</v-list-item-subtitle>
 
 									<p class="subtitle-1" style="font-size: 0.9rem !important">{{ member.blurb }}</p>
