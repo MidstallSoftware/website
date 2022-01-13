@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="padding-top: 25px">
 	  <v-row justify="center" align="start">
 			<v-col cols="12">
 				<v-row justify="center" align="center">
@@ -55,7 +55,7 @@
 			<v-col cols="12" md="6" lg="6" xl="6">
 				<v-row justify="center" align="start">
 					<v-col cols="12">
-						<h1 id="team" class="text-center">Our Team</h1>
+						<h1 id="team" class="text-center" style="padding-top: 25px">Our Team</h1>
 					</v-col>
 				</v-row>
 				<v-row>
@@ -96,33 +96,7 @@
 			<v-col cols="12" md="4" lg="3" xl="3">
 				<v-row justify="center" justify-md="start" align="start">
 					<v-col cols="12">
-						<h1 id="sites">Sites we're on</h1>
-					</v-col>
-				</v-row>
-				<v-row>
-					<v-col cols="12">
-						<SitesCard style="padding-bottom:25px" />
-					</v-col>
-				</v-row>
-			</v-col>
-			<v-col cols="12" md="4" lg="3" xl="3">
-				<v-row justify="center" justify-md="start" align="start">
-					<v-col cols="12">
-						<h1 id="info">More information on Midstall Software</h1>
-					</v-col>
-				</v-row>
-				<v-row>
-					<v-col cols="12">
-						<v-card>
-							<v-card-text>
-								<p><a href="/about/history" class="text--primary">Our History</a></p>
-							</v-card-text>
-						</v-card>
-					</v-col>
-				</v-row>
-				<v-row justify="center" justify-md="start" align="start">
-					<v-col cols="12">
-						<h1 id="contact">Contact Us</h1>
+						<h1 id="team" class="text-center" style="padding-top: 25px">More Information</h1>
 					</v-col>
 				</v-row>
 				<v-row>
@@ -130,6 +104,7 @@
 						<v-card>
 							<v-card-text>
 								<p>If you have any questions or comments for us, please send us an E-Mail at <a href="mailto:inquiry@midstall.com" class="text--primary">inquiry@midstall.com</a> or you may send us a Tweet at <a href="https://twitter.com/MidstallSW" class="text--primary">@MidstallSW</a>.</p>
+								<p><a href="/about/history" class="text--primary">Our History</a></p>
 							</v-card-text>
 						</v-card>
 					</v-col>
@@ -176,9 +151,9 @@ export default {
 				{
 					name: 'Carter Kelso',
 					positions: ['Cloud Engineer'],
-					avatar: null,
+					avatar: require('~/assets/img/team/carter.png'),
 					icon: null,
-					blurb: '',
+					blurb: 'My name is carter kelso, I am a dedicated I.T professional specializing in hardware repair and diagnosis aswell as large scale network configuration. I am excited to work with the team at Midstall.',
 					links: null
 				}
 			]

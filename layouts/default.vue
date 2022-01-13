@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-		<v-app-bar class="d-md-block d-lg-block d-xl-block d-none" dense elevate-on-scroll fixed>
+		<v-app-bar class="d-md-block d-lg-block d-xl-block d-none" dense elevate-on-scroll fixed elevation="3">
 			<v-toolbar-title>Midstall Software</v-toolbar-title>
 			<v-spacer />
 
@@ -51,7 +51,7 @@
 				</v-list>
 			</v-menu>
 		</v-app-bar>
-		<v-app-bar class="d-sm-block d-md-none d-lg-none d-xl-none d-block" dense elevate-on-scroll fixed>
+		<v-app-bar class="d-sm-block d-md-none d-lg-none d-xl-none d-block" dense elevate-on-scroll fixed elevation="3">
 			<v-app-bar-nav-icon @click="drawer = !drawer" />
 			<v-toolbar-title>Midstall Software</v-toolbar-title>
 		</v-app-bar>
@@ -121,7 +121,7 @@
 			</div>
 		</v-main>
     <v-footer absolute app>
-			<v-card flat tile class="text-center" width="100%">
+			<v-card tile class="text-center" width="100%">
 				<div class="d-inline">
 					<v-card-text class="d-inline">
 						<a class="text--primary mx-4" href="/">
