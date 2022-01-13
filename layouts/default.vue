@@ -147,7 +147,7 @@
 
 					<v-divider />
 		      <v-card-text class="text--primary">
-						&copy; {{ new Date().getFullYear() }} - Midstall, LLC
+						&copy; {{ new Date().getFullYear() }} - Midstall Software
 					</v-card-text>
 				</div>
 			</v-card>

@@ -24,7 +24,7 @@
 							<li>Able to work with Linux systems</li>
 						</ul>
 
-						<p>To apply, please join the Discord server and message one of the CEO's or send us an E-Mail at <a href="mailto:inquiry@midstall.com" class="text--primary">inquiry@midstall.com</a>.</p>
+						<p>To apply, please join the Discord server and message one of the CEO's or send us an E-Mail at <a href="mailto:apply@midstall.com" class="text--primary">apply@midstall.com</a>.</p>
 					</v-card-text>
 				</v-card>
 			</v-col>
