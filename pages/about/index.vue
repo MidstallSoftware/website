@@ -126,13 +126,6 @@ export default {
 					links: [{ name: 'GitHub', href: 'https://github.com/RossComputerGuy'}]
 				},
 				{
-					name: 'Travis Brinkert',
-					positions: ['CEO', 'Founder'],
-					avatar: require('~/assets/img/team/travis.jpg'),
-					blurb: 'Hello, I am a founder',
-					links: null
-				},
-				{
 					name: 'James Marcus Ross',
 					positions: ['Advisor'],
 					avatar: null,
