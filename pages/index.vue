@@ -1,7 +1,18 @@
 <template>
 	<div style="padding-top: 25px">
 	  <v-row justify="center" align="start">
-			<v-col order="2" order-md="1" cols="12" md="3" lg="3" xl="3">
+			<v-col cols="12" md="6" lg="6" xl="6">
+				<v-parallax :src="require('~/assets/img/expidus.png')">
+				  <v-row justify="left" align="end">
+						<v-col cols="6">
+							<h2 class="image-caption">Open sourcing technologies for tomorrow</h2>
+						</v-col>
+					</v-row>
+				</v-parallax>
+			</v-col>
+		</v-row>
+		<v-row justify="center" align="start">
+			<v-col cols="12" md="3" lg="3" xl="3">
 				<v-row justify="center" justify-md="start" align="start">
 					<v-col cols="12">
 						<h1>Our Products</h1>
@@ -18,15 +29,6 @@
 						</v-card>
 					</v-col>
 				</v-row>
-			</v-col>
-			<v-col order="1" order-md="2" cols="12" md="6" lg="6" xl="6">
-				<v-parallax :src="require('~/assets/img/expidus.png')">
-				  <v-row justify="left" align="end">
-						<v-col cols="6">
-							<h2 class="image-caption">Open sourcing technologies for tomorrow</h2>
-						</v-col>
-					</v-row>
-				</v-parallax>
 			</v-col>
 			<v-col order="3" cols="12" md="3" lg="3" xl="3">
 				<v-row justify="center" justify-md="start" align="start">
@@ -45,8 +47,14 @@
 				</v-row>
 			</v-col>
 		</v-row>
-	  <v-row justify="start" align="start">
-			<v-col order="2" order-md="1" cols="12" md="3" lg="3" xl="3">
+	  <v-row justify="center" align="center">
+			<v-col cols="12" md="6" lg="6" xl="6">
+				<v-parallax :src="require('~/assets/img/expidus.png')">
+				</v-parallax>
+			</v-col>
+		</v-row>
+	  <v-row justify="center" align="center">
+			<v-col cols="12" md="3" lg="3" xl="3">
 				<v-row justify="center" justify-md="start" align="start">
 					<v-col cols="12">
 						<h1>Who we are</h1>
@@ -72,10 +80,6 @@
 						</v-card>
 					</v-col>
 				</v-row>
-			</v-col>
-			<v-col order="1" order-md="2" cols="12" md="6" lg="6" xl="6">
-				<v-parallax :src="require('~/assets/img/expidus.png')">
-				</v-parallax>
 			</v-col>
 			<v-col order="3" cols="12" md="3" lg="3" xl="3">
 				<v-row justify="center" justify-md="start" align="start">
