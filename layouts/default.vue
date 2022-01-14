@@ -121,35 +121,34 @@
 			</div>
 		</v-main>
     <v-footer absolute app>
-			<v-card tile class="text-center" width="100%">
-				<div class="d-inline">
-					<v-card-text class="d-inline">
-						<a class="text--primary mx-4" href="/">
+			<v-card flat tile width="100%" class="text-center">
+				<p>
+					<v-card-text v-for="(link, index) in footerLinks" :key="index" class="d-inline">
+						<a :href="link.href" class="text--primary mx-4">
 							<v-btn elevation="0">
-								Home
+								{{ link.title }}
 							</v-btn>
 						</a>
 					</v-card-text>
-					<v-card-text class="d-inline">
-						<a class="text--primary mx-4" href="/about">
-							<v-btn elevation="0">
-								About
-							</v-btn>
-						</a>
+				</p>
+				<p>
+					<v-card-text v-for="(social, index) in socials" :key="index" class="d-inline">
+						<v-tooltip bottom>
+							<template v-slot:activator="{ on, attrs }">
+								<a :href="social.href" class="text--primary mx-4">
+									<v-btn elevation="0" icon v-bind="attrs" v-on="on">
+										<v-icon>mdi-{{ social.icon }}</v-icon>
+									</v-btn>
+								</a>
+							</template>
+							<span>{{ social.title }}</span>
+						</v-tooltip>
 					</v-card-text>
-					<v-card-text class="d-inline">
-						<a class="text--primary mx-4" href="/supporting">
-							<v-btn elevation="0">
-								Support Us
-							</v-btn>
-						</a>
-					</v-card-text>
-
-					<v-divider />
-		      <v-card-text class="text--primary">
-						&copy; {{ new Date().getFullYear() }} - Midstall Software
-					</v-card-text>
-				</div>
+				</p>
+				<v-divider />
+				<v-card-text class="text--primary">
+					&copy; {{ new Date().getFullYear() }} - Midstall Software
+				</v-card-text>
 			</v-card>
     </v-footer>
   </v-app>
@@ -157,7 +156,21 @@
 <script>
 export default {
 	data() {
-		return { drawer: false }
+		return {
+			drawer: false,
+			footerLinks: [
+				{ href: '/', title: 'Home' },
+				{ href: '/about', title: 'About' },
+				{ href: '/supporting', title: 'Support Us' }
+			],
+			socials: [
+				{ icon: 'discord', href: 'https://discord.com/invite/GVfBF2w', title: 'Server Invite' },
+				{ icon: 'github', href: 'https://github.com/MidstallSoftware', title: '@MidstallSoftware' },
+				{ icon: 'patreon', href: 'https://patreon.com/MidstallSoftware', title: '/MidstallSoftware' },
+				{ icon: 'reddit', href: 'https://reddit.com/r/Midstall', title: '/r/Midstall' },
+				{ icon: 'twitter', href: 'https://twitter.com/MidstallSW', title: '@MidstallSW' }
+			].sort((a, b) => a.title.localeCompare(b.title))
+		}
 	}
 }
 </script>

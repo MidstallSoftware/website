@@ -81,18 +81,6 @@
 					</v-col>
 				</v-row>
 			</v-col>
-			<v-col order="3" cols="12" md="3" lg="3" xl="3">
-				<v-row justify="center" justify-md="start" align="start">
-					<v-col cols="12">
-						<h1>Sites we're on</h1>
-					</v-col>
-				</v-row>
-				<v-row>
-					<v-col cols="12">
-						<SitesCard />
-					</v-col>
-				</v-row>
-			</v-col>
 		</v-row>
 	</div>
 </template>
