@@ -122,6 +122,23 @@
 		</v-main>
     <v-footer absolute app>
 			<v-card flat tile width="100%" class="text-center">
+				<v-row justify="end">
+					<v-spacer />
+					<v-col>
+						<v-menu top>
+							<template v-slot:activator="{ on, attrs }">
+								<v-btn v-bind="attrs" v-on="on">
+									Language
+								</v-btn>
+							</template>
+							<v-list>
+								<v-list-item v-for="locale in availableLocales" :key="locale.code">
+									<nuxt-link :to="switchLocalePath(locale.code)" class="text--primary">{{ locale.name }}</nuxt-link>
+								</v-list-item>
+							</v-list>
+						</v-menu>
+					</v-col>
+				</v-row>
 				<p>
 					<v-card-text v-for="(link, index) in footerLinks" :key="index" class="d-inline">
 						<a :href="link.href" class="text--primary mx-4">
@@ -155,6 +172,11 @@
 </template>
 <script>
 export default {
+	computed: {
+		availableLocales() {
+			return this.$i18n.locales
+		}
+	},
 	data() {
 		return {
 			drawer: false,
@@ -177,7 +199,7 @@ export default {
 <style>
 div.main-container {
 	padding-top: 45px;
-	padding-bottom: 20px;
+	padding-bottom: 65px;
 	padding-left: 15px;
 	padding-right: 15px;
 }

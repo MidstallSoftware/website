@@ -36,10 +36,37 @@ export default {
     '@nuxtjs/vuetify',
   ],
 
+	i18n: {
+		baseUrl: 'https://midstall.com',
+		locales: [
+			{
+				code: 'en',
+				name: 'English'
+			}
+		],
+		defaultLocale: 'en',
+		vueI18nLoader: true,
+		detectBrowserLanguage: {
+			useCookie: true,
+			cookieKey: 'i18n_redirected',
+			redirectOn: 'root'
+		},
+		vueI18n: {
+			fallbackLocale: 'en',
+			messages: {
+				en: {
+					'slogan': 'Open sourcing technologies for tomorrow',
+					'learn-more': 'Learn more'
+				}
+			}
+		}
+	},
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+		'@nuxtjs/i18n'
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
