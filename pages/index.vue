@@ -53,9 +53,9 @@
 				</v-parallax>
 			</v-col>
 		</v-row>
-	  <v-row justify="center" align="center">
+	  <v-row justify="center">
 			<v-col cols="12" md="3" lg="3" xl="3">
-				<v-row justify="center" justify-md="start" align="start">
+				<v-row justify="center" justify-md="start">
 					<v-col cols="12">
 						<h1>Who we are</h1>
 					</v-col>
@@ -70,9 +70,17 @@
 							</v-card-actions>
 						</v-card>
 					</v-col>
+				</v-row>
+			</v-col>
+			<v-col cols="12" md="3" lg="3" xl="3">
+				<v-row justify="center" justify-md="start">
+					<v-col cols="12">
+						<h1>Interested in supporting us?</h1>
+					</v-col>
+				</v-row>
+				<v-row>
 					<v-col cols="12">
 						<v-card>
-							<v-card-title>Interested in supporting us?</v-card-title>
 							<v-card-text>With our software being open source, any developer who meets our needs is welcomed to contribute code. If your not a developer, you may support us on Patreon or LiberaPay.</v-card-text>
 							<v-card-actions>
 								<a href="/supporting"><v-btn text color="teal accent-4">Learn more</v-btn></a>
