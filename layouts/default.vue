@@ -52,7 +52,9 @@
 			</v-menu>
 		</v-app-bar>
 		<v-app-bar class="d-sm-block d-md-none d-lg-none d-xl-none d-block" dense elevate-on-scroll fixed elevation="3">
-			<v-app-bar-nav-icon @click="drawer = !drawer" />
+			<v-app-bar-nav-icon @click="drawer = !drawer">
+				<v-icon>{{ mdiMenu }}</v-icon>
+			</v-app-bar-nav-icon>
 			<v-toolbar-title>{{ $t('company-name') }}</v-toolbar-title>
 		</v-app-bar>
 		<v-navigation-drawer v-model="drawer" absolute temporary>
@@ -156,7 +158,7 @@
 							<template v-slot:activator="{ on, attrs }">
 								<a :href="social.href" class="text--primary mx-4">
 									<v-btn elevation="0" icon v-bind="attrs" v-on="on">
-										<v-icon>mdi-{{ social.icon }}</v-icon>
+										<v-icon>{{ social.icon }}</v-icon>
 									</v-btn>
 								</a>
 							</template>
@@ -185,6 +187,8 @@
 }
 </i18n>
 <script>
+import { mdiDiscord, mdiGithub, mdiPatreon, mdiReddit, mdiTwitter, mdiMenu } from '@mdi/js'
+
 export default {
 	computed: {
 		availableLocales() {
@@ -194,17 +198,18 @@ export default {
 	data() {
 		return {
 			drawer: false,
+			mdiMenu,
 			footerLinks: [
 				{ href: '/', title: 'Home' },
 				{ href: '/about', title: 'About' },
 				{ href: '/supporting', title: 'Support Us' }
 			],
 			socials: [
-				{ icon: 'discord', href: 'https://discord.com/invite/GVfBF2w', title: 'Server Invite' },
-				{ icon: 'github', href: 'https://github.com/MidstallSoftware', title: '@MidstallSoftware' },
-				{ icon: 'patreon', href: 'https://patreon.com/MidstallSoftware', title: '/MidstallSoftware' },
-				{ icon: 'reddit', href: 'https://reddit.com/r/Midstall', title: '/r/Midstall' },
-				{ icon: 'twitter', href: 'https://twitter.com/MidstallSW', title: '@MidstallSW' }
+				{ icon: mdiDiscord, href: 'https://discord.com/invite/GVfBF2w', title: 'Server Invite' },
+				{ icon: mdiGithub, href: 'https://github.com/MidstallSoftware', title: '@MidstallSoftware' },
+				{ icon: mdiPatreon, href: 'https://patreon.com/MidstallSoftware', title: '/MidstallSoftware' },
+				{ icon: mdiReddit, href: 'https://reddit.com/r/Midstall', title: '/r/Midstall' },
+				{ icon: mdiTwitter, href: 'https://twitter.com/MidstallSW', title: '@MidstallSW' }
 			].sort((a, b) => a.title.localeCompare(b.title))
 		}
 	}

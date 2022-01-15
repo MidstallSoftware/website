@@ -90,6 +90,9 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
 		treeShake: true,
+		icons: {
+			iconfont: 'mdiSvg'
+		},
     theme: {
       dark: true,
       themes: {

@@ -81,8 +81,8 @@
 								</v-list-item-content>
 								<v-list-item-avatar tile size="80" :color="member.avatar == null ? 'grey' : null">
 									<v-img v-if="member.avatar != null" :src="member.avatar" />
-									<v-icon v-else-if="member.icon != null">mdi-{{ member.icon }}</v-icon>
-									<v-icon v-else>mdi-face-man</v-icon>
+									<v-icon v-else-if="member.icon != null">{{ member.icon }}</v-icon>
+									<v-icon v-else>{{ mdiFaceMan }}</v-icon>
 								</v-list-item-avatar>
 							</v-list-item>
 
@@ -118,9 +118,11 @@
 	</div>
 </template>
 <script>
+import { mdiFaceMan } from '@mdi/js'
 export default {
 	data() {
 		return {
+			mdiFaceMan,
 			team: [
 				{
 					name: 'Tristan Ross',

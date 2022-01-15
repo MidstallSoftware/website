@@ -32,7 +32,7 @@
 					<v-col cols="12" md="6" lg="6" xl="6">
 						<v-card min-height="100%">
 							<v-card-title>{{ $t('card2') }}</v-card-title>
-							<v-card-text v-html="$t('card2.text', ['<a href=\'https://patreon.com/MidstallSoftware\' class=\'text--primary\'><v-icon>mdi-patreon</v-icon> /MidstallSoftware</a>', '<a href=\'https://liberapay.com/ExpidusOS\' class=\'text--primary\'>LiberaPay</a>'])">
+							<v-card-text v-html="$t('card2.text', ['<a href=\'https://patreon.com/MidstallSoftware\' class=\'text--primary\'>Patreon @MidstallSoftware</a>', '<a href=\'https://liberapay.com/ExpidusOS\' class=\'text--primary\'>LiberaPay</a>'])">
 							</v-card-text>
 						</v-card>
 					</v-col>
@@ -57,7 +57,14 @@
 }
 </i18n>
 <script>
+import { mdiPatreon } from '@mdi/js'
+
 export default {
+	data() {
+		return {
+			mdiPatreon
+		}
+	},
 	head: {
 		title: 'Support Us',
 		meta: [
