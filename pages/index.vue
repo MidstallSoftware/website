@@ -80,7 +80,7 @@
 					<v-col cols="12" md="6" lg="6" xl="6">
 						<v-card min-height="100%">
 							<v-card-title class="d-md-none d-display">{{ $t('block4') }}</v-card-title>
-							<v-card-text>{{ $t('block4.content') }}</v-card-text>
+							<v-card-text style="padding-top: 15px">{{ $t('block4.content') }}</v-card-text>
 							<v-card-actions>
 								<a href="/supporting"><v-btn text color="teal accent-4">{{ $t('learn-more') }}</v-btn></a>
 							</v-card-actions>
