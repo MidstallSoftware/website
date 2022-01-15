@@ -143,6 +143,7 @@ export default class PageAboutIndex extends Vue {
 			name: 'Tristan Ross',
 			positions: ['CEO', 'Founder'],
 			avatar: require('~/assets/img/team/tristan.jpg'),
+			icon: null,
 			links: [{ name: 'GitHub', href: 'https://github.com/RossComputerGuy'}]
 		},
 		{
@@ -157,7 +158,6 @@ export default class PageAboutIndex extends Vue {
 			positions: ['UI Designer'],
 			avatar: null,
 			icon: null,
-			blurb: '',
 			links: null
 		},
 		{
