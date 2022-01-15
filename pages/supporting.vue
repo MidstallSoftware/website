@@ -56,22 +56,23 @@
 	}
 }
 </i18n>
-<script>
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
 import { mdiPatreon } from '@mdi/js'
 
-export default {
-	data() {
+@Component
+export default class PageSupporting extends Vue {
+	public readonly mdiPatreon: string = mdiPatreon
+
+	head() {
 		return {
-			mdiPatreon
+			title: 'Support Us',
+			meta: [
+				{ hid: 'og:title', name: 'og:title', content: 'Support Us | Midstall Software' },
+				{ hid: 'description', name: 'description', content: 'Midstall Software is in its infancy so we need all the help we can get.' },
+				{ hid: 'og:description', name: 'og:description', content: 'Midstall Software is in its infancy so we need all the help we can get.' }
+			]
 		}
-	},
-	head: {
-		title: 'Support Us',
-		meta: [
-			{ hid: 'og:title', name: 'og:title', content: 'Support Us | Midstall Software' },
-			{ hid: 'description', name: 'description', content: 'Midstall Software is in its infancy so we need all the help we can get.' },
-			{ hid: 'og:description', name: 'og:description', content: 'Midstall Software is in its infancy so we need all the help we can get.' }
-		]
 	}
 }
 </script>

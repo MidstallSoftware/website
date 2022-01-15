@@ -77,7 +77,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-		'@nuxtjs/i18n'
+		'@nuxtjs/i18n',
+		['cookie-universal-nuxt', { parseJSON: true }]
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

@@ -89,21 +89,28 @@
 		</v-row>
 	</div>
 </template>
-<script>
-export default {
-	data() {
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
+
+interface ProductNewsEntry {
+	product: string | null
+	post: string | null
+}
+
+@Component
+export default class PageIndex extends Vue {
+	public readonly pnews: ProductNewsEntry[] = [
+		{ product: 'expidusos', post: '2022-01-13' },
+		{ product: 'argama', post: '2022-01-07' }
+	]
+
+	head() {
 		return {
-			pnews: [
-				{ product: 'expidusos', post: '2022-01-13' },
-				{ product: 'argama', post: '2022-01-07' }
+			title: 'Home',
+			meta: [
+				{ hid: 'og:title', name: 'og:title', content: 'Home | Midstall Software' }
 			]
 		}
-	},
-	head: {
-		title: 'Home',
-		meta: [
-			{ hid: 'og:title', name: 'og:title', content: 'Home | Midstall Software' }
-		]
 	}
 }
 </script>
