@@ -12,7 +12,7 @@
 			</v-col>
 		</v-row>
 		<v-row class="d-none d-md-flex" justify="center" align="start">
-			<v-col cols="12" md="10" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="6">
 				<v-row justify="center" justify-md="start">
 					<v-col cols="12" md="6" lg="6" xl="6">
 						<h1>{{ $t('block1') }}</h1>

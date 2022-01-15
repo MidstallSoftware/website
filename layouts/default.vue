@@ -50,10 +50,22 @@
 					</v-list-item>
 				</v-list>
 			</v-menu>
+			<v-menu open-on-hover offset-y>
+				<template v-slot:activator="{ on, attrs }">
+					<v-btn v-bind="attrs" v-on="on">
+						<span><fa :icon="['fas', 'language']" /> {{ $i18n.locales.filter(i => i.code == $i18n.locale)[0].name }}</span>
+					</v-btn>
+				</template>
+				<v-list>
+					<v-list-item v-for="locale in availableLocales" :key="locale.code">
+						<nuxt-link :to="switchLocalePath(locale.code)" class="text--primary">{{ locale.name }}</nuxt-link>
+					</v-list-item>
+				</v-list>
+			</v-menu>
 		</v-app-bar>
 		<v-app-bar class="d-sm-block d-md-none d-lg-none d-xl-none d-block" dense elevate-on-scroll fixed elevation="3">
 			<v-app-bar-nav-icon @click="drawer = !drawer">
-				<v-icon>{{ mdiMenu }}</v-icon>
+				<fa :icon="['fas', 'bars']" />
 			</v-app-bar-nav-icon>
 			<v-toolbar-title>{{ $t('company-name') }}</v-toolbar-title>
 		</v-app-bar>
@@ -118,6 +130,23 @@
 					</v-list-group>
 				</v-list-item>
 			</v-list>
+
+			<template v-slot:prepend>
+				<div class="pa-2">
+					<v-menu top>
+						<template v-slot:activator="{ on, attrs }">
+							<v-btn v-bind="attrs" v-on="on">
+								<span><fa :icon="['fas', 'language']" /> {{ $i18n.locales.filter(i => i.code == $i18n.locale)[0].name }}</span>
+							</v-btn>
+						</template>
+						<v-list>
+							<v-list-item v-for="locale in availableLocales" :key="locale.code">
+								<nuxt-link :to="switchLocalePath(locale.code)" class="text--primary">{{ locale.name }}</nuxt-link>
+							</v-list-item>
+						</v-list>
+					</v-menu>
+				</div>
+			</template>
 		</v-navigation-drawer>
 		<v-main>
 			<div class="main-container">
@@ -126,23 +155,6 @@
 		</v-main>
     <v-footer absolute app>
 			<v-card flat tile width="100%" class="text-center">
-				<v-row justify="end">
-					<v-spacer />
-					<v-col>
-						<v-menu top>
-							<template v-slot:activator="{ on, attrs }">
-								<v-btn v-bind="attrs" v-on="on">
-									Language
-								</v-btn>
-							</template>
-							<v-list>
-								<v-list-item v-for="locale in availableLocales" :key="locale.code">
-									<nuxt-link :to="switchLocalePath(locale.code)" class="text--primary">{{ locale.name }}</nuxt-link>
-								</v-list-item>
-							</v-list>
-						</v-menu>
-					</v-col>
-				</v-row>
 				<p>
 					<v-card-text v-for="(link, index) in footerLinks" :key="index" class="d-inline">
 						<a :href="link.href" class="text--primary mx-4">
@@ -158,7 +170,7 @@
 							<template v-slot:activator="{ on, attrs }">
 								<a :href="social.href" class="text--primary mx-4">
 									<v-btn elevation="0" icon v-bind="attrs" v-on="on">
-										<v-icon>{{ social.icon }}</v-icon>
+										<fa :icon="['fab', social.icon]" />
 									</v-btn>
 								</a>
 							</template>
@@ -187,8 +199,6 @@
 }
 </i18n>
 <script>
-import { mdiDiscord, mdiGithub, mdiPatreon, mdiReddit, mdiTwitter, mdiMenu } from '@mdi/js'
-
 export default {
 	computed: {
 		availableLocales() {
@@ -198,18 +208,17 @@ export default {
 	data() {
 		return {
 			drawer: false,
-			mdiMenu,
 			footerLinks: [
 				{ href: '/', title: 'Home' },
 				{ href: '/about', title: 'About' },
 				{ href: '/supporting', title: 'Support Us' }
 			],
 			socials: [
-				{ icon: mdiDiscord, href: 'https://discord.com/invite/GVfBF2w', title: 'Server Invite' },
-				{ icon: mdiGithub, href: 'https://github.com/MidstallSoftware', title: '@MidstallSoftware' },
-				{ icon: mdiPatreon, href: 'https://patreon.com/MidstallSoftware', title: '/MidstallSoftware' },
-				{ icon: mdiReddit, href: 'https://reddit.com/r/Midstall', title: '/r/Midstall' },
-				{ icon: mdiTwitter, href: 'https://twitter.com/MidstallSW', title: '@MidstallSW' }
+				{ icon: 'discord', href: 'https://discord.com/invite/GVfBF2w', title: 'Server Invite' },
+				{ icon: 'github', href: 'https://github.com/MidstallSoftware', title: '@MidstallSoftware' },
+				{ icon: 'patreon', href: 'https://patreon.com/MidstallSoftware', title: '/MidstallSoftware' },
+				{ icon: 'reddit', href: 'https://reddit.com/r/Midstall', title: '/r/Midstall' },
+				{ icon: 'twitter', href: 'https://twitter.com/MidstallSW', title: '@MidstallSW' }
 			].sort((a, b) => a.title.localeCompare(b.title))
 		}
 	}
@@ -217,7 +226,7 @@ export default {
 </script>
 <style>
 div.main-container {
-	padding-top: 45px;
+	padding-top: 65px;
 	padding-bottom: 65px;
 	padding-left: 15px;
 	padding-right: 15px;

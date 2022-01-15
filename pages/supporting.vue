@@ -32,7 +32,7 @@
 					<v-col cols="12" md="6" lg="6" xl="6">
 						<v-card min-height="100%">
 							<v-card-title>{{ $t('card2') }}</v-card-title>
-							<v-card-text v-html="$t('card2.text', ['<a href=\'https://patreon.com/MidstallSoftware\' class=\'text--primary\'>Patreon @MidstallSoftware</a>', '<a href=\'https://liberapay.com/ExpidusOS\' class=\'text--primary\'>LiberaPay</a>'])">
+							<v-card-text v-html="$t('card2.text', ['<a href=\'https://patreon.com/MidstallSoftware\' class=\'text--primary\'>Patreon</a>', '<a href=\'https://liberapay.com/ExpidusOS\' class=\'text--primary\'>LiberaPay</a>'])">
 							</v-card-text>
 						</v-card>
 					</v-col>
@@ -52,18 +52,15 @@
 		"card1.criteria3": "Able to work with Linux systems",
 		"card1.ending": "To apply, please join the Discord server and message the CEO or send us an E-Mail at {0}.",
 		"card2": "Donating",
-		"card2.text": "If you are unable to volunteer your time or your willing to donate, we are on multiple payment platforms. We are on {0}. Or you may find us on {1}."
+		"card2.text": "If you are unable to volunteer your time or your willing to donate, we are on multiple payment platforms. We are on {0} or you may find us on {1}."
 	}
 }
 </i18n>
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import { mdiPatreon } from '@mdi/js'
 
 @Component
 export default class PageSupporting extends Vue {
-	public readonly mdiPatreon: string = mdiPatreon
-
 	head() {
 		return {
 			title: 'Support Us',

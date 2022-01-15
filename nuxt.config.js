@@ -38,8 +38,9 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+		'@nuxtjs/fontawesome',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    '@nuxtjs/vuetify'
   ],
 
 	i18n: {
@@ -90,12 +91,20 @@ export default {
     }
   },
 
+	fontawesome: {
+		component: 'fa',
+		icons: {
+			solid: ['faSmile', 'faBars', 'faLanguage'],
+			brands: ['faGithub', 'faTwitter', 'faPatreon', 'faReddit', 'faDiscord']
+		}
+	},
+
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
 		treeShake: true,
 		icons: {
-			iconfont: 'mdiSvg'
+			iconfont: 'faSvg'
 		},
     theme: {
       dark: true,
