@@ -7,7 +7,7 @@
 				</v-row>
 			</v-col>
 			<v-row justify="center" align="start">
-				<v-col cols="12" md="8" lg="6" xl="4">
+				<v-col cols="12" md="10" lg="8" xl="8">
 					<v-row v-for="x in 3" :key="x" style="padding-bottom: 15px">
 						<v-card>
 							<v-card-title>{{ $t('card' + x + '.title') }}</v-card-title>

@@ -10,7 +10,7 @@
 			</v-col>
 		</v-row>
 		<v-row justify="center" align="start">
-			<v-col cols="12" md="10" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-row>
 					<v-col cols="12" md="6" lg="6" xl="6">
 						<v-card min-height="100%">

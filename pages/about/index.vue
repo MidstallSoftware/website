@@ -10,7 +10,7 @@
 			</v-col>
 		</v-row>
 		<v-row justify="center" align="start">
-			<v-col cols="12" md="10" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-row>
 					<v-col v-for="x in 2" :key="x" cols="12" md="6" lg="6" xl="6">
 						<v-card min-height="100%">
@@ -34,14 +34,14 @@
 			</v-col>
 		</v-row>
 		<v-row justify="center" align="start">
-			<v-col cols="12" md="10" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-row justify="center" align="start">
 					<v-col cols="12">
 						<h1 id="team" class="text-center" style="padding-top: 25px">{{ $t('team') }}</h1>
 					</v-col>
 				</v-row>
 				<v-row>
-					<v-col v-for="(member, index) in team" :key="index" cols="12" md="12" lg="6" xl="6">
+					<v-col v-for="(member, index) in team" :key="index" cols="12" md="12" lg="6" xl="4">
 						<v-card min-height="100%">
 							<v-list-item three-line>
 								<v-list-item-content>
@@ -75,7 +75,7 @@
 			</v-col>
 		</v-row>
 		<v-row justify="center" align="start">
-			<v-col cols="12" md="10" lg="3" xl="3">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-row justify="center" justify-md="start" align="start">
 					<v-col cols="12">
 						<h1 id="team" class="text-center" style="padding-top: 25px">{{ $t('card5.title') }}</h1>

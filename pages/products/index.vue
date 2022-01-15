@@ -1,7 +1,7 @@
 <template>
 	<div style="padding-top: 25px">
 		<v-row justify="center" align="start">
-			<v-col cols="12" md="6" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-parallax :src="require('~/assets/img/expidusos.png')">
 					<v-row justify="left" align="end" style="margin-bottom: 25px">
 						<v-col cols="3">
@@ -18,7 +18,7 @@
 			</v-col>
 		</v-row>
 		<v-row class="d-none d-md-flex" justify="center" align="start">
-			<v-col cols="12" md="6" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-row justify="center" justify-md="start">
 					<v-col cols="12" md="6" lg="6" xl="6">
 						<h1 class="text-left">{{ $t('product.expidusos.block1') }}</h1>
@@ -30,7 +30,7 @@
 			</v-col>
 		</v-row>
 		<v-row justify="center" align="start">
-			<v-col cols="12" md="6" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-row>
 					<v-col cols="12" md="6" lg="6" xl="6">
 						<v-card min-height="100%">
@@ -74,7 +74,7 @@
 			</v-col>
 		</v-row>
 		<v-row justify="center" align="start">
-			<v-col cols="12" md="6" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-parallax :src="require('~/assets/img/argama.png')">
 					<v-row justify="left" align="end" style="margin-bottom: 25px">
 						<v-col cols="3">

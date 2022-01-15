@@ -1,7 +1,7 @@
 <template>
 	<div style="padding-top: 25px">
 	  <v-row justify="center" align="start">
-			<v-col cols="12" md="10" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-parallax :src="require('~/assets/img/expidusos.png')">
 				  <v-row justify="left" align="end">
 						<v-col cols="6">
@@ -12,7 +12,7 @@
 			</v-col>
 		</v-row>
 		<v-row class="d-none d-md-flex" justify="center" align="start">
-			<v-col cols="12" md="10" lg="8" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-row justify="center" justify-md="start">
 					<v-col cols="12" md="6" lg="6" xl="6">
 						<h1>{{ $t('block1') }}</h1>
@@ -24,7 +24,7 @@
 			</v-col>
 		</v-row>
 		<v-row justify="center" align="start">
-			<v-col cols="12" md="10" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-row v-for="(pnew, index) in pnews" :key="index">
 					<v-col v-if="pnew.product != null" cols="12" md="6" lg="6" xl="6">
 						<v-card min-height="100%">
@@ -35,6 +35,7 @@
 							</v-card-actions>
 						</v-card>
 					</v-col>
+					<v-divider class="d-none d-md-block" vertical />
 					<v-col v-if="pnew.post != null" cols="12" md="6" lg="6" xl="6">
 						<v-card min-height="100%">
 							<v-card-title>{{ $t('news.' + pnew.post.split('-').join('.') + '.title') }}</v-card-title>
@@ -46,13 +47,13 @@
 			</v-col>
 		</v-row>
 	  <v-row justify="center" align="center">
-			<v-col cols="12" md="10" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-parallax :src="require('~/assets/img/argama.png')">
 				</v-parallax>
 			</v-col>
 		</v-row>
 		<v-row class="d-none d-md-flex" justify="center" align="start">
-			<v-col cols="12" md="10" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-row justify="center" justify-md="start">
 					<v-col cols="12" md="6" lg="6" xl="6">
 						<h1>{{ $t('block3') }}</h1>
@@ -64,7 +65,7 @@
 			</v-col>
 		</v-row>
 		<v-row justify="center" align="start">
-			<v-col cols="12" md="10" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="8" xl="8">
 				<v-row>
 					<v-col cols="12" md="6" lg="6" xl="6">
 						<v-card min-height="100%">
@@ -75,6 +76,7 @@
 							</v-card-actions>
 						</v-card>
 					</v-col>
+					<v-divider class="d-none d-md-block" vertical />
 					<v-col cols="12" md="6" lg="6" xl="6">
 						<v-card min-height="100%">
 							<v-card-title class="d-md-none d-display">{{ $t('block4') }}</v-card-title>
