@@ -1,20 +1,23 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head() {
+		const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
 		return {
 	    titleTemplate: '%s - Midstall Software',
 	    title: 'Midstall Software',
+			htmlAttrs: i18nHead.htmlAttrs,
 	    meta: [
 	      { charset: 'utf-8' },
 	      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
 	      { hid: 'description', name: 'description', content: 'A group of passionate developers who hope to bring privacy and security to all devices.' },
 				{ hid: 'og:description', name: 'og:description', content: 'A group of passionate developers who hope to bring privacy and security to all devices.' },
-	      { name: 'format-detection', content: 'telephone=no' }
+	      { name: 'format-detection', content: 'telephone=no' },
+				...i18nHead.meta
 	    ],
 	    link: [
-	      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
-	    ],
-			...this.$nuxtI18nHead({ addSeoAttributes: true })
+	      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+				...i18nHead.link
+	    ]
 		}
   },
 
