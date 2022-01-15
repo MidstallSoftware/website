@@ -1,12 +1,12 @@
 <template>
   <v-app dark>
 		<v-app-bar class="d-md-block d-lg-block d-xl-block d-none" dense elevate-on-scroll fixed elevation="3">
-			<v-toolbar-title>Midstall Software</v-toolbar-title>
+			<v-toolbar-title>{{ $t('company-name') }}</v-toolbar-title>
 			<v-spacer />
 
 			<a class="text--primary" href="/">
 				<v-btn elevation="0">
-					Home
+					{{ $t('page.home') }}
 				</v-btn>
 			</a>
 
@@ -14,20 +14,20 @@
 				<template v-slot:activator="{ on, attrs }">
 					<a class="text--primary" href="/products">
 						<v-btn elevation="0" v-bind="attrs" v-on="on">
-							Products
+							{{ $t('page.products') }}
 						</v-btn>
 					</a>
 				</template>
 
 				<v-list dense nav>
 					<v-list-item link>
-						<a class="text--primary" href="/products/expidus">
-							ExpidusOS
+						<a class="text--primary" href="/products/expidusos">
+							{{ $t('product.expidusos.name') }}
 						</a>
 					</v-list-item>
 					<v-list-item link>
 						<a class="text--primary" href="/products/argama">
-							Project Argama
+							{{ $t('product.argama.name') }}
 						</a>
 					</v-list-item>
 				</v-list>
@@ -37,7 +37,7 @@
 				<template v-slot:activator="{ on, attrs }">
 					<a class="text--primary" href="/about">
 						<v-btn elevation="0" v-bind="attrs" v-on="on">
-							About
+							{{ $t('page.about') }}
 						</v-btn>
 					</a>
 				</template>
@@ -45,7 +45,7 @@
 				<v-list dense nav>
 					<v-list-item link>
 						<a class="text--primary" href="/about/history">
-							History
+							{{ $t('page.about.history') }}
 						</a>
 					</v-list-item>
 				</v-list>
@@ -53,7 +53,7 @@
 		</v-app-bar>
 		<v-app-bar class="d-sm-block d-md-none d-lg-none d-xl-none d-block" dense elevate-on-scroll fixed elevation="3">
 			<v-app-bar-nav-icon @click="drawer = !drawer" />
-			<v-toolbar-title>Midstall Software</v-toolbar-title>
+			<v-toolbar-title>{{ $t('company-name') }}</v-toolbar-title>
 		</v-app-bar>
 		<v-navigation-drawer v-model="drawer" absolute temporary>
 			<v-list dense nav>
@@ -61,7 +61,7 @@
 					<v-list-item-content>
 						<a class="text--primary" href="/">
 							<v-btn elevation="0">
-								Home
+								{{ $t('page.home') }}
 							</v-btn>
 						</a>
 					</v-list-item-content>
@@ -72,22 +72,22 @@
 							<v-list-item-content>
 								<v-list-item-title>
 									<v-btn elevation="0">
-										Products
+										{{ $t('page.products') }}
 									</v-btn>
 								</v-list-item-title>
 							</v-list-item-content>
 						</template>
 						<v-list-item link>
-							<a class="text--primary" href="/products/expidus">
+							<a class="text--primary" href="/products/expidusos">
 								<v-btn elevation="0">
-									ExpidusOS
+									{{ $t('product.expidusos.name') }}
 								</v-btn>
 							</a>
 						</v-list-item>
 						<v-list-item link>
 							<a class="text--primary" href="/products/argama">
 								<v-btn elevation="0">
-									Project Argama
+									{{ $t('product.argama.name') }}
 								</v-btn>
 							</a>
 						</v-list-item>
@@ -98,16 +98,18 @@
 						<template v-slot:activator>
 							<v-list-item-content>
 								<v-list-item-title>
-									<v-btn elevation="0">
-										About
-									</v-btn>
+									<a href="/about" class="text--primary">
+										<v-btn elevation="0">
+											{{ $t('page.about') }}
+										</v-btn>
+									</a>
 								</v-list-item-title>
 							</v-list-item-content>
 						</template>
 						<v-list-item link>
 							<a class="text--primary" href="/about/history">
 								<v-btn elevation="0">
-									History
+									{{ $t('page.about.history') }}
 								</v-btn>
 							</a>
 						</v-list-item>
@@ -164,12 +166,24 @@
 				</p>
 				<v-divider />
 				<v-card-text class="text--primary">
-					&copy; {{ new Date().getFullYear() }} - Midstall Software
+					&copy; {{ new Date().getFullYear() }} - {{ $t('company-name') }}
 				</v-card-text>
 			</v-card>
     </v-footer>
   </v-app>
 </template>
+<i18n>
+{
+	"en": {
+		"company-name": "Midstall Software",
+		"page.home": "Home",
+		"page.products": "Products",
+		"page.supporting": "Support Us",
+		"page.about": "About",
+		"page.about.history": "History"
+	}
+}
+</i18n>
 <script>
 export default {
 	computed: {

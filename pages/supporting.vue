@@ -4,42 +4,58 @@
 			<v-col cols="12">
 				<v-row justify="center" align="center">
 					<v-col cols="12">
-						<h1 id="about" class="text-center">Supporting Midstall</h1>
+						<h1 id="about" class="text-center">{{ $t('title') }}</h1>
 					</v-col>
 				</v-row>
 			</v-col>
 		</v-row>
-		<v-row justify="center" align="center">
-			<v-col cols="12" md="4" lg="3" xl="3">
-				<v-card>
-					<v-card-title>Volunteering</v-card-title>
-					<v-card-text>
-						We accept anyone who meets our criteria to join as a volunteer. However, as a volunteer, compensation is not expected but can be arranged if we deem it possible.
+		<v-row justify="center" align="start">
+			<v-col cols="12" md="10" lg="6" xl="6">
+				<v-row>
+					<v-col cols="12" md="6" lg="6" xl="6">
+						<v-card min-height="100%">
+							<v-card-title>{{ $t('card1') }}</v-card-title>
+							<v-card-text>
+								<p>{{ $t('card1.opening') }}</p>
 
-						<h4>Criteria</h4>
-						<ul>
-							<li>Available on Sunday at 5 PM PST (<b>recommended</b>)</li>
-							<li>Knows: C++, Vala, JS/TS (including Node.JS), and/or HTML</li>
-							<li>Can use Docker and Git</li>
-							<li>Able to work with Linux systems</li>
-						</ul>
+								<h4>Criteria</h4>
+								<ul>
+									<li>{{ $t('card1.criteria1') }}</li>
+									<li>{{ $t('card1.criteria2') }}</li>
+									<li>{{ $t('card1.criteria3') }}</li>
+								</ul>
 
-						<p>To apply, please join the Discord server and message one of the CEO's or send us an E-Mail at <a href="mailto:apply@midstall.com" class="text--primary">apply@midstall.com</a>.</p>
-					</v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" md="4" lg="3" xl="3">
-				<v-card>
-					<v-card-title>Donating</v-card-title>
-					<v-card-text>
-						If you are unable to volunteer your time or your willing to donate, we are on multiple payment platforms.
-						<p>We are on <a href="https://patreon.com/MidstallSoftware" class="text--primary"><v-icon>mdi-patreon</v-icon> /MidstallSoftware</a>. Or you may find us on <a href="https://liberapay.com/ExpidusOS/" class="text--primary">LiberaPay</a>.</p>
-					</v-card-text>
-				</v-card>
+								<p v-html="$t('card1.ending', ['<a href=\'mailto:apply@midstall.com\' class=\'text--primary\'>apply@midstall.com</a>'])"></p>
+							</v-card-text>
+						</v-card>
+					</v-col>
+					<v-col cols="12" md="6" lg="6" xl="6">
+						<v-card min-height="100%">
+							<v-card-title>{{ $t('card2') }}</v-card-title>
+							<v-card-text v-html="$t('card2.text', ['<a href=\'https://patreon.com/MidstallSoftware\' class=\'text--primary\'><v-icon>mdi-patreon</v-icon> /MidstallSoftware</a>', '<a href=\'https://liberapay.com/ExpidusOS\' class=\'text--primary\'>LiberaPay</a>'])">
+							</v-card-text>
+						</v-card>
+					</v-col>
+				</v-row>
 			</v-col>
 		</v-row>
 	</div>
 </template>
+<i18n>
+{
+	"en": {
+		"title": "Supporting Midstall",
+		"card1": "Volunteering",
+		"card1.opening": "We accept anyone who meets our criteria to join as a volunteer. However, as a volunteer, compensation is not expected but can be arranged if we deem it possible.",
+		"card1.criteria1": "Knows: C++, Vala, JS/TS (including Node.JS), and/or HTML",
+		"card1.criteria2": "Can use Docker and Git",
+		"card1.criteria3": "Able to work with Linux systems",
+		"card1.ending": "To apply, please join the Discord server and message the CEO or send us an E-Mail at {0}.",
+		"card2": "Donating",
+		"card2.text": "If you are unable to volunteer your time or your willing to donate, we are on multiple payment platforms. We are on {0}. Or you may find us on {1}."
+	}
+}
+</i18n>
 <script>
 export default {
 	head: {

@@ -9,50 +9,54 @@
 				</v-row>
 			</v-col>
 		</v-row>
-	  <v-row justify="center" align="start">
-			<v-col cols="12" md="4" lg="3" xl="3">
-				<v-card>
-					<v-card-title>Who we are</v-card-title>
-					<v-card-text>
-						A group of passionate developers who's goal is to provide quality software that fits within the FOSS philosophy.
-						We aim for maximum compatibility without causing degrading performance or large resource requirements on the hardware.
-					</v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" md="4" lg="3" xl="3">
-				<v-card>
-					<v-card-title>What is our motivation</v-card-title>
-					<v-card-text>
-						We believe that Linux is destined to become a large player in the OS market. With this belief, we are developing our own ecosystem around Linux.
-						An ecosystem that is comparable to others which already exist but is open source will mean that self-hosting is possible.
-						This is because there are people who may not trust us with their data. We believe in this as a right including the freedom to modify.
-					</v-card-text>
-				</v-card>
+		<v-row justify="center" align="start">
+			<v-col cols="12" md="10" lg="6" xl="6">
+				<v-row>
+					<v-col cols="12" md="6" lg="6" xl="6">
+						<v-card min-height="100%">
+							<v-card-title>Who we are</v-card-title>
+							<v-card-text>
+								A group of passionate developers who's goal is to provide quality software that fits within the FOSS philosophy.
+								We aim for maximum compatibility without causing degrading performance or large resource requirements on the hardware.
+							</v-card-text>
+						</v-card>
+					</v-col>
+					<v-col cols="12" md="6" lg="6" xl="6">
+						<v-card min-height="100%">
+							<v-card-title>What is our motivation</v-card-title>
+							<v-card-text>
+								We believe that Linux is destined to become a large player in the OS market. With this belief, we are developing our own ecosystem around Linux.
+								An ecosystem that is comparable to others which already exist but is open source will mean that self-hosting is possible.
+								This is because there are people who may not trust us with their data. We believe in this as a right including the freedom to modify.
+							</v-card-text>
+						</v-card>
+					</v-col>
+				</v-row>
+				<v-row>
+					<v-col cols="12" md="6" lg="6" xl="6">
+						<v-card min-height="100%">
+							<v-card-title>How is our software priced</v-card-title>
+							<v-card-text>
+								The majority of our software is free. Third party games and some software on the ExpidusOS Application Store may come at a cost.
+								However when it comes to the online services we provide, it is priced based on tiers.
+								Despite that, there is a free option and we do allow self-hosting with no added cost.
+							</v-card-text>
+						</v-card>
+					</v-col>
+					<v-col cols="12" md="6" lg="6" xl="6">
+						<v-card min-height="100%">
+							<v-card-title>What data we collect from users</v-card-title>
+							<v-card-text>
+								We attempt to collect as little as necessary. In fact with Project Argama, users may choose what we collect and sell to third parties.
+								This is to comply with the European GDPR laws but we also believe in the right to choosing who your data is sold to.
+							</v-card-text>
+						</v-card>
+					</v-col>
+				</v-row>
 			</v-col>
 		</v-row>
 		<v-row justify="center" align="start">
-			<v-col cols="12" md="4" lg="3" xl="3">
-				<v-card>
-					<v-card-title>How is our software priced</v-card-title>
-					<v-card-text>
-						The majority of our software is free. Third party games and some software on the ExpidusOS Application Store may come at a cost.
-						However when it comes to the online services we provide, it is priced based on tiers.
-						Despite that, there is a free option and we do allow self-hosting with no added cost.
-					</v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" md="4" lg="3" xl="3">
-				<v-card>
-					<v-card-title>What data we collect from users</v-card-title>
-					<v-card-text>
-						We attempt to collect as little as necessary. In fact with Project Argama, users may choose what we collect and sell to third parties.
-						This is to comply with the European GDPR laws but we also believe in the right to choosing who your data is sold to.
-					</v-card-text>
-				</v-card>
-			</v-col>
-		</v-row>
-		<v-row justify="center" align="start">
-			<v-col cols="12" md="6" lg="6" xl="6">
+			<v-col cols="12" md="10" lg="6" xl="6">
 				<v-row justify="center" align="start">
 					<v-col cols="12">
 						<h1 id="team" class="text-center" style="padding-top: 25px">Our Team</h1>
@@ -60,7 +64,7 @@
 				</v-row>
 				<v-row>
 					<v-col v-for="(member, index) in team" :key="index" cols="12" md="12" lg="6" xl="6">
-						<v-card>
+						<v-card min-height="100%">
 							<v-list-item three-line>
 								<v-list-item-content>
 									<v-list-item-title class="text-h5 mb-1">
@@ -93,7 +97,7 @@
 			</v-col>
 		</v-row>
 		<v-row justify="center" align="start">
-			<v-col cols="12" md="4" lg="3" xl="3">
+			<v-col cols="12" md="10" lg="3" xl="3">
 				<v-row justify="center" justify-md="start" align="start">
 					<v-col cols="12">
 						<h1 id="team" class="text-center" style="padding-top: 25px">More Information</h1>

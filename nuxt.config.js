@@ -1,18 +1,21 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    titleTemplate: '%s - Midstall Software',
-    title: 'Midstall Software',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'A group of passionate developers who hope to bring privacy and security to all devices.' },
-			{ hid: 'og:description', name: 'og:description', content: 'A group of passionate developers who hope to bring privacy and security to all devices.' },
-      { name: 'format-detection', content: 'telephone=no' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
-    ]
+  head() {
+		return {
+	    titleTemplate: '%s - Midstall Software',
+	    title: 'Midstall Software',
+	    meta: [
+	      { charset: 'utf-8' },
+	      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+	      { hid: 'description', name: 'description', content: 'A group of passionate developers who hope to bring privacy and security to all devices.' },
+				{ hid: 'og:description', name: 'og:description', content: 'A group of passionate developers who hope to bring privacy and security to all devices.' },
+	      { name: 'format-detection', content: 'telephone=no' }
+	    ],
+	    link: [
+	      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+	    ],
+			...this.$nuxtI18nHead({ addSeoAttributes: true })
+		}
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -41,6 +44,7 @@ export default {
 		locales: [
 			{
 				code: 'en',
+				iso: 'en-US',
 				name: 'English'
 			}
 		],
@@ -55,6 +59,10 @@ export default {
 			fallbackLocale: 'en',
 			messages: {
 				en: {
+					'product.expidusos.name': 'ExpidusOS',
+					'product.expidusos.caption': 'An operating system designed for running on many devices ranging from phones to desktop computers. It is the core of our software ecosystem.',
+					'product.argama.name': 'Project Argama',
+					'product.argama.caption': 'The online services that we provide. It makes up a huge chunk of our infrastructure. You can many services ranging from files to streaming videos from different devices.',
 					'slogan': 'Open sourcing technologies for tomorrow',
 					'learn-more': 'Learn more'
 				}
