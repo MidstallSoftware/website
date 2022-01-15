@@ -128,6 +128,7 @@ interface TeamMemberLink {
 }
 
 interface TeamMember {
+	name: string
 	positions: string[]
 	avatar: string | null
 	icon: string | null
