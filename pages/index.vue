@@ -31,7 +31,7 @@
 							<v-card-title>{{ $t('product.' + pnew.product + '.name') }}</v-card-title>
 							<v-card-text>{{ $t('product.' + pnew.product + '.caption') }}</v-card-text>
 							<v-card-actions>
-								<a :href="'/products/' + pnews.product"><v-btn text color="teal accent-4">{{ $t('learn-more') }}</v-btn></a>
+								<a :href="'/products/' + pnew.product"><v-btn text color="teal accent-4">{{ $t('learn-more') }}</v-btn></a>
 							</v-card-actions>
 						</v-card>
 					</v-col>
