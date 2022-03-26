@@ -7,16 +7,16 @@ $app-bar-elevation: 1 !default;
 
 $material-dark: (
   'app-bar': #24283b,
-	'background': #1a1b26,
+  'background': #1a1b26,
   'bg-color': #1a1b26,
   'bottom-navigation': #24283b,
   'buttons': (
     'disabled': #1a1b26,
     'focused': #414868,
     'focused-alt': #565f89,
-    'pressed': #9aa5ce
+    'pressed': #9aa5ce,
   ),
-	'cards': #24283b,
+  'cards': #24283b,
   'fg-color': #fff,
   'navigation-drawer': #24283b,
   'surface': #24283b,
@@ -26,9 +26,9 @@ $material-dark: (
     'secondary': #9aa5ce,
     'disabled': #b4f9f8,
     'link': #7dcfff,
-    'link-hover': #2ac3de
-   ),
-  'text-color': #fff
+    'link-hover': #2ac3de,
+  ),
+  'text-color': #fff,
 );
 
 $material-light: (
@@ -36,12 +36,12 @@ $material-light: (
   'background': #fff,
   'bg-color': #fff,
   'bottom-navigation': #d5d6db,
-	'buttons': (
-		'disabled': #d5d6db,
-		'focused': #0f0f14,
-		'focused-alt': #9699a3,
-		'pressed': #565a6e
-	),
+  'buttons': (
+    'disabled': #d5d6db,
+    'focused': #0f0f14,
+    'focused-alt': #9699a3,
+    'pressed': #565a6e,
+  ),
   'cards': #d5d6db,
   'fg-color': #000,
   'navigation-drawer': #d5d6db,
@@ -52,21 +52,21 @@ $material-light: (
     'secondary': #565a6e,
     'disabled': #33635c,
     'link': #0f4b6e,
-    'link-hover': #166775
-   ),
-  'text-color': #000
+    'link-hover': #166775,
+  ),
+  'text-color': #000,
 );
 
 @import '~vuetify/src/styles/styles.sass';
 
 .v-app-bar {
-	max-height: 48px;
+  max-height: 48px;
 }
 
 .v-footer {
-	width: 100%;
+  width: 100%;
 
-	.v-card {
-		background-color: inherit;
-	}
+  .v-card {
+    background-color: inherit;
+  }
 }

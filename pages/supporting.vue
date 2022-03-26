@@ -1,50 +1,64 @@
 <template>
-	<div style="padding-top: 25px">
-	  <v-row justify="center" align="start">
-			<v-col cols="12">
-				<v-row justify="center" align="center">
-					<v-col cols="12">
-						<h1 id="about" class="text-center">{{ $t('title') }}</h1>
-					</v-col>
-				</v-row>
-			</v-col>
-		</v-row>
-		<v-row justify="center" align="start">
-			<v-col cols="12" md="10" lg="8" xl="8">
-				<v-row>
-					<v-col cols="12" md="6" lg="6" xl="6">
-						<v-card min-height="100%">
-							<v-card-title>{{ $t('card1') }}</v-card-title>
-							<v-card-text>
-								<p>{{ $t('card1.opening') }}</p>
+  <div style="padding-top: 25px">
+    <v-row justify="center" align="start">
+      <v-col cols="12">
+        <v-row justify="center" align="center">
+          <v-col cols="12">
+            <h1 id="about" class="text-center">{{ $t('page-title') }}</h1>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+    <v-row justify="center" align="start">
+      <v-col cols="12" md="10" lg="8" xl="8">
+        <v-row>
+          <v-col cols="12" md="6" lg="6" xl="6">
+            <v-card min-height="100%">
+              <v-card-title>{{ $t('card1') }}</v-card-title>
+              <v-card-text>
+                <p>{{ $t('card1.opening') }}</p>
 
-								<h4>Criteria</h4>
-								<ul>
-									<li>{{ $t('card1.criteria1') }}</li>
-									<li>{{ $t('card1.criteria2') }}</li>
-									<li>{{ $t('card1.criteria3') }}</li>
-								</ul>
+                <h4>Criteria</h4>
+                <ul>
+                  <li>{{ $t('card1.criteria1') }}</li>
+                  <li>{{ $t('card1.criteria2') }}</li>
+                  <li>{{ $t('card1.criteria3') }}</li>
+                </ul>
 
-								<p v-html="$t('card1.ending', ['<a href=\'mailto:apply@midstall.com\' class=\'text--primary\'>apply@midstall.com</a>'])"></p>
-							</v-card-text>
-						</v-card>
-					</v-col>
-					<v-col cols="12" md="6" lg="6" xl="6">
-						<v-card min-height="100%">
-							<v-card-title>{{ $t('card2') }}</v-card-title>
-							<v-card-text v-html="$t('card2.text', ['<a href=\'https://patreon.com/MidstallSoftware\' class=\'text--primary\'>Patreon</a>', '<a href=\'https://liberapay.com/ExpidusOS\' class=\'text--primary\'>LiberaPay</a>'])">
-							</v-card-text>
-						</v-card>
-					</v-col>
-				</v-row>
-			</v-col>
-		</v-row>
-	</div>
+                <p
+                  v-html="
+                    $t('card1.ending', [
+                      '<a href=\'mailto:apply@midstall.com\' class=\'text--primary\'>apply@midstall.com</a>',
+                    ])
+                  "
+                ></p>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col cols="12" md="6" lg="6" xl="6">
+            <v-card min-height="100%">
+              <v-card-title>{{ $t('card2') }}</v-card-title>
+              <v-card-text
+                v-html="
+                  $t('card2.text', [
+                    '<a href=\'https://patreon.com/MidstallSoftware\' class=\'text--primary\'>Patreon</a>',
+                    '<a href=\'https://liberapay.com/ExpidusOS\' class=\'text--primary\'>LiberaPay</a>',
+                  ])
+                "
+              >
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 <i18n>
 {
 	"en": {
-		"title": "Supporting Midstall",
+		"page-title": "Supporting Midstall",
+		"page-desc": "Midstall Software is in its infancy so we need all the help we can get.",
 		"card1": "Volunteering",
 		"card1.opening": "We accept anyone who meets our criteria to join as a volunteer. However, as a volunteer, compensation is not expected but can be arranged if we deem it possible.",
 		"card1.criteria1": "Knows: C++, Vala, JS/TS (including Node.JS), and/or HTML",
@@ -59,17 +73,31 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 
-@Component
-export default class PageSupporting extends Vue {
-	head() {
-		return {
-			title: 'Support Us',
-			meta: [
-				{ hid: 'og:title', name: 'og:title', content: 'Support Us | Midstall Software' },
-				{ hid: 'description', name: 'description', content: 'Midstall Software is in its infancy so we need all the help we can get.' },
-				{ hid: 'og:description', name: 'og:description', content: 'Midstall Software is in its infancy so we need all the help we can get.' }
-			]
-		}
-	}
-}
+@Component({
+  head() {
+    return {
+      title: this.$t('page-title').toString(),
+      meta: [
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.$t('full-title', {
+            page: this.$t('page-title'),
+          }).toString(),
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('page-desc').toString(),
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.$t('page-desc').toString(),
+        },
+      ],
+    }
+  },
+})
+export default class PageSupporting extends Vue {}
 </script>

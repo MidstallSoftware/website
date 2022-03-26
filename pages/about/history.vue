@@ -1,31 +1,36 @@
 <template>
-	<div style="padding-top: 25px">
-		<v-row justify="center" align="start">
-			<v-col cols="12">
-				<v-row justify="center" align="start">
-					<h1 class="text-center" style="padding-bottom: 15px">{{ $t('page-title') }}</h1>
-				</v-row>
-			</v-col>
-			<v-row justify="center" align="start">
-				<v-col cols="12" md="10" lg="8" xl="8">
-					<v-row v-for="x in 3" :key="x" style="padding-bottom: 15px">
-						<v-card>
-							<v-card-title>{{ $t('card' + x + '.title') }}</v-card-title>
-							<v-card-subtitle v-html="$t('card' + x + '.date')"></v-card-subtitle>
-							<v-card-text>
-								{{ $t('card' + x + '.content') }}
-							</v-card-text>
-						</v-card>
-					</v-row>
-				</v-col>
-			</v-row>
-		</v-row>
-	</div>
+  <div style="padding-top: 25px">
+    <v-row justify="center" align="start">
+      <v-col cols="12">
+        <v-row justify="center" align="start">
+          <h1 class="text-center" style="padding-bottom: 15px">
+            {{ $t('page-title') }}
+          </h1>
+        </v-row>
+      </v-col>
+      <v-row justify="center" align="start">
+        <v-col cols="12" md="10" lg="8" xl="8">
+          <v-row v-for="x in 3" :key="x" style="padding-bottom: 15px">
+            <v-card>
+              <v-card-title>{{ $t('card' + x + '.title') }}</v-card-title>
+              <v-card-subtitle
+                v-html="$t('card' + x + '.date')"
+              ></v-card-subtitle>
+              <v-card-text>
+                {{ $t('card' + x + '.content') }}
+              </v-card-text>
+            </v-card>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-row>
+  </div>
 </template>
 <i18n>
 {
 	"en": {
 		"page-title": "History of Midstall Software",
+		"page-desc": "All the events from the inception of the company to the present.",
 		"card1.title": "Beginning",
 		"card1.date": "Oct. 2020 - Jan. 2021",
 		"card1.content": "Midstall Software was created with the inception of ExpidusOS and both were created by Tristan Ross. Originally, ExpidusOS was going to be built on top of AwesomeWM and there were a few test builds utilizing it. The goal of ExpidusOS was to create an OS which can run on both phones and desktops under the same codebase. This is because many operating systems have to have seperate codebases for their mobile and desktop counterparts. Tristan Ross saw the potential with this operating system and brough on Travis Brinkert as a co-founder. Both would work together but Tristan would manage the software side of things. Travis would manage the business side of things during this period. As the early days rolled by, it was determined that AwesomeWM was insufficient with being able to provide what is needed to reach the goal. This is when XFCE4 was forked and modified to run better for phones. This eventually became known as \"ExpidusOS Willamette v0.1.0-prealpha Test Release #1\" and released towards the end of January of 2021. Over time, people looked at it and became interested in it.",
@@ -41,17 +46,31 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 
-@Component
-export default class PageAboutHistory extends Vue {
-	head() {
-		return {
-			title: 'History',
-			meta: [
-				{ hid: 'og:title', name: 'og:title', content: 'History | Midstall Software' },
-	      { hid: 'description', name: 'description', content: 'All the events from the inception of the company to the present.' },
-				{ hid: 'og:description', name: 'og:description', content: 'All the events from the inception of the company to the present.' }
-			]
-		}
-	}
-}
+@Component({
+  head() {
+    return {
+      title: this.$t('page-title').toString(),
+      meta: [
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.$t('full-title', {
+            page: this.$t('page-title'),
+          }).toString(),
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('page-desc').toString(),
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.$t('page-desc').toString(),
+        },
+      ],
+    }
+  },
+})
+export default class PageAboutHistory extends Vue {}
 </script>
