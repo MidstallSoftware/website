@@ -140,8 +140,8 @@ interface ProductNewsEntry {
 })
 export default class PageIndex extends Vue {
   public readonly pnews: ProductNewsEntry[] = [
-    { product: 'expidusos', post: '2022-03-26' },
-    { product: 'argama', post: '2022-01-13' },
+    { product: 'expidusos', post: '2022-04-01' },
+    { product: 'argama', post: '2022-03-26' },
   ]
 }
 </script>
@@ -158,8 +158,8 @@ export default class PageIndex extends Vue {
 		"block4.content": "With our software being open source, any developer who meets our needs is welcomed to contribute code. If your not a developer, you may support us on Patreon or LiberaPay.",
 		"news.2022.03.26.title": "Announcement of Cerus",
 		"news.2022.03.26.content": "We are proud to announce a new product that'll be launching soon. It is called Cerus and it is a Discord bot hosting platform. More information to come out soon.",
-		"news.2022.01.13.title": "Resignation of Travis Brinkert",
-		"news.2022.01.13.content": "Due to private matters, Traivs Brinkert, decided to resign from Midstall Software. We wish him the best of luck with his future as he has been with us since the beginning."
+		"news.2022.04.01.title": "Cerus Public Testing",
+		"news.2022.04.01.content": "Cerus is currently in the public testing phase."
 	}
 }
 </i18n>

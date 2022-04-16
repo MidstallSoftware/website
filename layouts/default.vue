@@ -254,7 +254,7 @@ export default {
         { href: '/', title: this.$t('page.home').toString() },
         { href: '/about', title: this.$t('page.about').toString() },
         { href: '/supporting', title: this.$t('page.supporting').toString() },
-        { href: '/legal/privacy', title: this.$t('page.privacy').toString() }
+        { href: '/legal/privacy', title: this.$t('page.privacy').toString() },
       ],
       socials: [
         {
