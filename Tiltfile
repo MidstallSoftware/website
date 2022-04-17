@@ -1,7 +1,11 @@
-docker_compose('./docker-compose.yml')
+load('ext://deployment', 'deployment_create')
+load('ext://restart_process', 'docker_build_with_restart')
 
-docker_build('ghcr.io/midstallsoftware/website', '.', live_update=[
+k8s_yaml('./kube.yml')
+
+docker_build_with_restart('ghcr.io/midstallsoftware/website', '.', 'npm run start', live_update=[
   sync('.', '/usr/src/nuxt-app'),
   run('npm i', trigger='package.json'),
-  restart_container()
 ], extra_tag='master')
+
+deployment_create('midstall-website', 'ghcr.io/midstallsoftware/website:master', namespace='midstall', ports='5000')
