@@ -6,7 +6,5 @@ docker_build_with_restart('ghcr.io/midstallsoftware/website', '.', 'npm run star
   run('npm i', trigger='package.json'),
 ], extra_tag='master')
 
-k8s_apply('./kube/deploy.yml')
-k8s_apply('./kube/service.yml')
-
-deployment_create('midstall-website', 'ghcr.io/midstallsoftware/website:master', namespace='midstall', ports='80')
+k8s_yaml('./kube/deploy.yml')
+k8s_yaml('./kube/service.yml')

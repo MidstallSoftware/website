@@ -12,7 +12,8 @@ spec:
       app: midstall-website
   template:
     metadata:
-      app: midstall-website
+      labels:
+        app: midstall-website
     spec:
       containers:
         - image: ghcr.io/midstallsoftware/website:master
