@@ -7,8 +7,7 @@ RUN apk update && apk upgrade
 RUN apk add git
 
 COPY . /usr/src/nuxt-app/
-RUN npm install
-RUN npm run build
+RUN npm install && npm run build && npm prune --production && rm -rf layouts pages store test
 
 EXPOSE 5000
 
