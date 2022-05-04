@@ -17,6 +17,7 @@ spec:
     spec:
       containers:
         - image: ghcr.io/midstallsoftware/website:master
+          imagePullPolicy: Always
           name: website
           ports:
             - containerPort: 80
