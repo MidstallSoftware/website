@@ -45,3 +45,10 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - name: Deploy to Kubernetes
+        if: github.event_name != 'pull_request'
+        uses: safe2008/argocd-app-actions@main
+        with:
+          appName: 'website'
+          address: ${{ secrets.ARGOCD_HOST }}
+          token: ${{ secrets.ARGOCD_TOKEN }}

@@ -26,6 +26,9 @@ export default {
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
         ...i18nHead.link,
       ],
+      script: [
+        { src: 'https://cdn.pagesense.io/js/midstallsoftware/690f2a6e45db43f798fb0ece7c8c8ead.js' }
+      ]
     }
   },
 
