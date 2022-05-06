@@ -27,7 +27,7 @@ export default {
         ...i18nHead.link,
       ],
       script: [
-        { src: 'https://cdn.pagesense.io/js/midstallsoftware/690f2a6e45db43f798fb0ece7c8c8ead.js' }
+        { src: 'https://cdn.pagesense.io/js/midstallsoftware/de0360a54be44abebca313da319f2cdd.js' }
       ]
     }
   },
