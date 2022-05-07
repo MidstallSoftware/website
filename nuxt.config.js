@@ -28,6 +28,7 @@ export default {
       ],
       script: [
         { src: 'https://cdn.pagesense.io/js/midstallsoftware/de0360a54be44abebca313da319f2cdd.js' },
+        { src: 'https://www.googletagmanager.com/gtag/js?id=G-GGPX59G3D9', async: true },
         { src: '/js/analytics.js' }
       ],
     }
