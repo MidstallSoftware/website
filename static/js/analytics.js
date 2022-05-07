@@ -6,6 +6,6 @@ gtag('config', 'G-GGPX59G3D9', {
   'custom_map': {'dimension': 'zoho' }
 });
 
-$(document).ready(function() {
+window.onload = function() {
   window.ZAB.GAIntegFunc();
-});
+};
