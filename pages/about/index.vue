@@ -1,255 +1,199 @@
 <template>
-  <div style="padding-top: 25px">
-    <v-row justify="center" align="start">
-      <v-col cols="12">
-        <v-row justify="center" align="center">
-          <v-col cols="12">
-            <h1 id="about" class="text-center">{{ $t('page-title') }}</h1>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
-    <v-row justify="center" align="start">
-      <v-col cols="12" md="10" lg="8" xl="8">
-        <v-row>
-          <v-col v-for="x in 2" :key="x" cols="12" md="6" lg="6" xl="6">
-            <v-card min-height="100%">
-              <v-card-title>{{ $t('card' + x + '.title') }}</v-card-title>
-              <v-card-text>
-                {{ $t('card' + x + '.content') }}
-              </v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col v-for="x in 2" :key="x" cols="12" md="6" lg="6" xl="6">
-            <v-card min-height="100%">
-              <v-card-title>{{ $t('card' + (x + 2) + '.title') }}</v-card-title>
-              <v-card-text>
-                {{ $t('card' + (x + 2) + '.content') }}
-              </v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
-    <v-row justify="center" align="start">
-      <v-col cols="12" md="10" lg="8" xl="8">
-        <v-row justify="center" align="start">
-          <v-col cols="12">
-            <h1 id="team" class="text-center" style="padding-top: 25px">
-              {{ $t('team') }}
-            </h1>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col
-            v-for="(member, index) in team"
-            :key="index"
-            cols="12"
-            md="12"
-            lg="6"
-            xl="4"
-          >
-            <v-card min-height="100%">
-              <v-list-item three-line>
-                <v-list-item-content>
-                  <v-list-item-title class="text-h5 mb-1">
-                    {{ member.name }}
-                  </v-list-item-title>
-
-                  <v-list-item-subtitle class="text-overline mb-4">
-                    <p v-if="member.positions.length > 1">
-                      Positions: {{ member.positions.join(', ') }}
-                    </p>
-                    <p v-else>Position: {{ member.positions[0] }}</p>
-                    <p>
-                      E-Mail:
-                      <a
-                        :href="
-                          'mailto:' +
-                          member.name.split(' ').join('.').toLowerCase() +
-                          '@midstall.com'
-                        "
-                        class="text--primary"
-                        >{{
-                          member.name.split(' ').join('.').toLowerCase()
-                        }}@midstall.com</a
-                      >
-                    </p>
-                  </v-list-item-subtitle>
-
-                  <p class="subtitle-1" style="font-size: 0.9rem !important">
-                    {{
-                      $t(
-                        'team.' +
-                          member.name.split(' ').join('.').toLowerCase() +
-                          '.blurb'
-                      )
-                    }}
-                  </p>
-                </v-list-item-content>
-                <v-list-item-avatar
-                  tile
-                  size="80"
-                  :color="member.avatar == null ? 'grey' : null"
-                >
-                  <v-img v-if="member.avatar != null" :src="member.avatar" />
-                  <v-icon v-else-if="member.icon != null">{{
-                    member.icon
-                  }}</v-icon>
-                  <fa v-else :icon="['fas', 'smile']" />
-                </v-list-item-avatar>
-              </v-list-item>
-
-              <v-card-actions v-if="member.links != null">
+  <div>
+    <h1 class="text-center text-5xl font-bold py-8">{{ $i18n.t('title') }}</h1>
+    <div class="justify-center px-8 h-fit w-full">
+      <div
+        class="grid gap-y-4 sm:grid-cols-1 md:grid-rows-1 md:grid-cols-4 md:gap-4"
+      >
+        <div v-for="i in 4" :key="i" class="card bg-primary">
+          <div class="card-body">
+            <h2 class="card-title">{{ $i18n.t(`about.${i}.title`) }}</h2>
+            <p>{{ $i18n.t(`about.${i}.text`) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center text-5xl font-bold py-8">
+      {{ $i18n.t('team-title') }}
+    </h1>
+    <div class="justify-center px-8 h-fit w-full">
+      <div class="grid gap-y-4 sm:grid-cols-1 md:grid-cols-2 md:gap-4">
+        <div
+          v-for="(member, i) in team"
+          :key="i"
+          class="card card-side bg-primary"
+        >
+          <figure v-if="member.image" class="overflow-hidden">
+            <img :src="member.image" class="h-[16rem] w-[13rem]" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">{{ member.name }}</h2>
+            <i18n-t
+              class="text-sm"
+              :keypath="member.positions.length > 1 ? 'positions' : 'position'"
+              tag="p"
+            >
+              <span>{{ member.positions.join(', ') }}</span>
+            </i18n-t>
+            <i18n-t class="text-sm" keypath="email" tag="p">
+              <a
+                class="underline"
+                :href="
+                  'mailto:' +
+                  member.name.split(' ').join('.').toLowerCase() +
+                  '@midstall.com'
+                "
+                target="_blank"
+                >{{
+                  member.name.split(' ').join('.').toLowerCase()
+                }}@midstall.com</a
+              >
+            </i18n-t>
+            <p>
+              {{
+                $i18n.t(
+                  'team.' + member.name.split(' ').join('-').toLowerCase()
+                )
+              }}
+            </p>
+            <vs-nav-menu :links="member.links" horizontal />
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center text-5xl font-bold py-8">
+      {{ $i18n.t('more-title') }}
+    </h1>
+    <div class="justify-center px-8 h-fit w-full">
+      <div class="flex flex-col w-full lg:flex-row">
+        <div class="card bg-primary">
+          <div class="card-body">
+            <p>
+              <i18n-t keypath="more.inquiry.text0" tag="span">
                 <a
-                  v-for="link in member.links"
-                  :key="link.href"
-                  :href="link.href"
+                  href="mailto:inquiry@midstall.com"
+                  target="_blank"
+                  class="underline"
+                  >inquiry@midstall.com</a
                 >
-                  <v-btn text color="teal accent-4">{{ link.name }}</v-btn>
-                </a>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
-    <v-row justify="center" align="start">
-      <v-col cols="12" md="10" lg="8" xl="8">
-        <v-row justify="center" justify-md="start" align="start">
-          <v-col cols="12">
-            <h1 id="team" class="text-center" style="padding-top: 25px">
-              {{ $t('card5.title') }}
-            </h1>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col cols="12" md="6" lg="6" xl="6">
-            <v-card>
-              <v-card-text>
-                <p v-html="$t('card5.content')"></p>
-                <p>
-                  <a href="/about/history" class="text--primary">{{
-                    $t('history')
-                  }}</a>
-                </p>
-              </v-card-text>
-            </v-card>
-          </v-col>
-          <v-divider class="d-none d-md-block" vertical />
-          <v-col cols="12" md="6" lg="6" xl="6">
-            <v-card>
-              <v-card-title>{{ $t('card6.title') }}</v-card-title>
-              <v-card-text>
-                <p>{{ $t('card6.content') }}</p>
-              </v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
+              </i18n-t>
+              <i18n-t keypath="more.inquiry.text1" tag="span">
+                <a
+                  href="https://twitter.com/MidstallSW"
+                  target="_blank"
+                  class="underline"
+                  >@MidstallSW</a
+                >
+              </i18n-t>
+            </p>
+          </div>
+        </div>
+        <div
+          class="divider sm:hidden md:inline-block lg:divider-horizontal"
+        ></div>
+        <div class="card bg-primary">
+          <div class="card-body">
+            <h2 class="card-title">{{ $i18n.t('more.rops.title') }}</h2>
+            <p>{{ $i18n.t('more.rops.text') }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
-<i18n>
-{
-	"en": {
-		"page-title": "About Midstall",
-		"page-desc": "About the company, Midstall Software, from sites we're on to the people behind the scenes.",
-		"card1.title": "Who we are",
-		"card1.content": "A group of passionate developers who's goal is to provide quality software that fits within the FOSS philosophy. We aim for maximum compatibility without causing degrading performance or large resource requirements on the hardware.",
-		"card2.title": "What is our motivation",
-		"card2.content": "We believe that Linux is destined to become a large player in the OS market. With this belief, we are developing our own ecosystem around Linux. An ecosystem that is comparable to others which already exist but is open source will mean that self-hosting is possible. This is because there are people who may not trust us with their data. We believe in this as a right including the freedom to modify.",
-		"card3.title": "How is our software priced",
-		"card3.content": "The majority of our software is free. Third party games and some software on the ExpidusOS Application Store may come at a cost. However when it comes to the online services we provide, it is priced based on tiers. Despite that, there is a free option and we do allow self-hosting with no added cost.",
-		"card4.title": "What data we collect from users",
-		"card4.content": "We attempt to collect as little as necessary. In fact with Project Argama, users may choose what we collect and sell to third parties. This is to comply with the European GDPR laws but we also believe in the right to choosing who your data is sold to.",
-		"team": "Our Team",
-		"team.tristan.ross.blurb": "Hello, I am Tristan Ross. I am largely responsible for what goes on at Midstall Software.",
-		"team.james.marcus.ross.blurb": "Hello, world.",
-		"team.nathan.ritchie.blurb": "Hello, world.",
-		"team.carter.kelso.blurb": "My name is carter kelso, I am a dedicated I.T professional specializing in hardware repair and diagnosis aswell as large scale network configuration. I am excited to work with the team at Midstall.",
-		"card5.title": "More Information",
-		"card5.content": "If you have any questions or comments for us, please send us an E-Mail at <a href=\"mailto:inquiry@midstall.com\" class=\"text--primary\">inquiry@midstall.com</a> or you may send us a Tweet at <a href=\"https://twitter.com/MidstallSW\" class=\"text--primary\">@MidstallSW</a>. These methods of contact may also be used to reach out to our customer service. However, we do not have a publicly available phone number at this time.",
-		"card6.title": "Regions of Operation",
-		"card6.content": "We operate in the United States, however our services are available outside of the U.S. We also accept most currencies using Stripe but we primarily use the United States Dollar (USD). The majority of our content is in English but we are always accepting outside contributors to translate our software and websites to any language.",
-		"history": "Our History"
-	}
-}
-</i18n>
-<script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+<script setup lang="ts">
+import { mdiGithub, mdiTwitter } from '@mdi/js'
+import { useI18n } from '@midstallsoftware/vista/dist/runtime/composables/vista'
+import teamTristan from '~/assets/team/tristan.ross.jpg'
+import teamCarter from '~/assets/team/carter.kelso.png'
+import { definePageMeta } from '#imports'
 
-interface TeamMemberLink {
-  name: string
-  href: string
-}
+const $i18n = useI18n()
 
-interface TeamMember {
-  name: string
-  positions: string[]
-  avatar: string | null
-  icon: string | null
-  links: TeamMemberLink[] | null
-}
-
-@Component({
-  head() {
-    return {
-      title: this.$t('page-title').toString(),
-      meta: [
-        {
-          hid: 'og:title',
-          name: 'og:title',
-          content: this.$t('full-title', {
-            page: this.$t('page-title'),
-          }).toString(),
-        },
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.$t('page-desc').toString(),
-        },
-        {
-          hid: 'og:description',
-          name: 'og:description',
-          content: this.$t('page-desc').toString(),
-        },
-      ],
-    }
+const team = [
+  {
+    name: 'Tristan Ross',
+    positions: ['CEO', 'Founder'],
+    links: [
+      {
+        icon: mdiGithub,
+        url: 'https://github.com/RossComputerGuy',
+      },
+      {
+        icon: mdiTwitter,
+        url: 'https://twitter.com/RossComputerGuy',
+      },
+    ],
+    image: teamTristan,
   },
+  {
+    name: 'James Marcus Ross',
+    positions: ['Advisor'],
+  },
+  {
+    name: 'Nathan Ritchie',
+    positions: ['UI Designer'],
+  },
+  {
+    name: 'Carter Kelso',
+    positions: ['Cloud Engineer'],
+    image: teamCarter,
+  },
+]
+
+definePageMeta({
+  title: 'page.about.home',
+  layout: 'vs-default',
 })
-export default class PageAboutIndex extends Vue {
-  public readonly team: TeamMember[] = [
-    {
-      name: 'Tristan Ross',
-      positions: ['CEO', 'Founder'],
-      avatar: require('~/assets/img/team/tristan.jpg'),
-      icon: null,
-      links: [{ name: 'GitHub', href: 'https://github.com/RossComputerGuy' }],
-    },
-    {
-      name: 'James Marcus Ross',
-      positions: ['Advisor'],
-      avatar: null,
-      icon: null,
-      links: null,
-    },
-    {
-      name: 'Nathan Ritchie',
-      positions: ['UI Designer'],
-      avatar: null,
-      icon: null,
-      links: null,
-    },
-    {
-      name: 'Carter Kelso',
-      positions: ['Cloud Engineer'],
-      avatar: require('~/assets/img/team/carter.png'),
-      icon: null,
-      links: null,
-    },
-  ]
+</script>
+<script lang="ts">
+export default {
+  name: 'PageAboutIndex',
 }
 </script>
+<i18n>
+{
+    "en": {
+        "title": "About Midstall Software",
+        "about": {
+            "1": {
+                "title": "Who we are",
+                "text": "A group of passionate developers who's goal is to provide quality software that fits within the FOSS philosophy. We aim for maximum compatibility without causing degrading performance or large resource requirements on the hardware. "
+            },
+            "2": {
+                "title": "What is our motivation",
+                "text": "We believe that Linux is destined to become a large player in the OS market. With this belief, we are developing our own ecosystem around Linux. An ecosystem that is comparable to others which already exist but is open source will mean that self-hosting is possible. This is because there are people who may not trust us with their data. We believe in this as a right including the freedom to modify. "
+            },
+            "3": {
+                "title": "How is our software priced",
+                "text": "The majority of our software is free. Third party games and some software on the ExpidusOS Application Store may come at a cost. However when it comes to the online services we provide, it is priced based on tiers. Despite that, there is a free option and we do allow self-hosting with no added cost. "
+            },
+            "4": {
+                "title": "What data we collect from users",
+                "text": "We attempt to collect as little as necessary. In fact with the Argama Network, users may choose what we collect and sell to third parties. This is to comply with the European GDPR laws but we also believe in the right to choosing who your data is sold to. "
+            }
+        },
+        "team-title": "Our Team",
+        "email": "E-Mail: {0}",
+        "position": "Position: {0}",
+        "positions": "Positions: {0}",
+        "team": {
+            "tristan-ross": "Hello, I am Tristan Ross. I am largely responsible for what goes on at Midstall Software.",
+            "james-marcus-ross": "Hello, world.",
+            "nathan-ritchie": "Hello, world",
+            "carter-kelso": "My name is carter kelso, I am a dedicated I.T professional specializing in hardware repair and diagnosis aswell as large scale network configuration. I am excited to work with the team at Midstall."
+        },
+        "more-title": "More Information",
+        "more": {
+            "inquiry": {
+                "text0": "If you have any questions or comments for us, please send us an E-Mail at {0}.",
+                "text1": "You may also send us a Tweet at {0}. These methods of contact may also be used to reach out to our customer service. However, we do not have a publicly available phone number at this time."
+            },
+            "rops": {
+                "title": "Region of Operation",
+                "text": "We operate in the United States, however our services are available outside of the U.S. We also accept most currencies using Stripe but we primarily use the United States Dollar (USD). The majority of our content is in English but we are always accepting outside contributors to translate our software and websites to any language."
+            }
+        }
+    }
+}
+</i18n>

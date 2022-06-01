@@ -1,171 +1,88 @@
 <template>
-  <div style="padding-top: 25px">
-    <v-row justify="center" align="start">
-      <v-col cols="12" md="10" lg="8" xl="8">
-        <v-parallax :src="require('~/assets/img/expidusos.png')">
-          <v-row justify="left" align="end">
-            <v-col cols="6">
-              <h2 class="image-caption">{{ $t('slogan') }}</h2>
-            </v-col>
-          </v-row>
-        </v-parallax>
-      </v-col>
-    </v-row>
-    <v-row class="d-none d-md-flex" justify="center" align="start">
-      <v-col cols="12" md="10" lg="8" xl="8">
-        <v-row justify="center" justify-md="start">
-          <v-col cols="12" md="6" lg="6" xl="6">
-            <h1>{{ $t('block1') }}</h1>
-          </v-col>
-          <v-col cols="12" md="6" lg="6" xl="6">
-            <h1>{{ $t('block2') }}</h1>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
-    <v-row justify="center" align="start">
-      <v-col cols="12" md="10" lg="8" xl="8">
-        <v-row v-for="(pnew, index) in pnews" :key="index">
-          <v-col v-if="pnew.product != null" cols="12" md="6" lg="6" xl="6">
-            <v-card min-height="100%">
-              <v-card-title>{{
-                $t('product.' + pnew.product + '.name')
-              }}</v-card-title>
-              <v-card-text>{{
-                $t('product.' + pnew.product + '.caption')
-              }}</v-card-text>
-              <v-card-actions>
-                <a :href="'/products/' + pnew.product"
-                  ><v-btn text color="teal accent-4">{{
-                    $t('learn-more')
-                  }}</v-btn></a
-                >
-              </v-card-actions>
-            </v-card>
-          </v-col>
-          <v-divider class="d-none d-md-block" vertical />
-          <v-col v-if="pnew.post != null" cols="12" md="6" lg="6" xl="6">
-            <v-card min-height="100%">
-              <v-card-title>{{
-                $t('news.' + pnew.post.split('-').join('.') + '.title')
-              }}</v-card-title>
-              <v-card-subtitle>{{ pnew.post }}</v-card-subtitle>
-              <v-card-text>{{
-                $t('news.' + pnew.post.split('-').join('.') + '.content')
-              }}</v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
-    <v-row justify="center" align="center">
-      <v-col cols="12" md="10" lg="8" xl="8">
-        <v-parallax :src="require('~/assets/img/argama.png')"> </v-parallax>
-      </v-col>
-    </v-row>
-    <v-row class="d-none d-md-flex" justify="center" align="start">
-      <v-col cols="12" md="10" lg="8" xl="8">
-        <v-row justify="center" justify-md="start">
-          <v-col cols="12" md="6" lg="6" xl="6">
-            <h1>{{ $t('block3') }}</h1>
-          </v-col>
-          <v-col cols="12" md="6" lg="6" xl="6">
-            <h1>{{ $t('block4') }}</h1>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
-    <v-row justify="center" align="start">
-      <v-col cols="12" md="10" lg="8" xl="8">
-        <v-row>
-          <v-col cols="12" md="6" lg="6" xl="6">
-            <v-card min-height="100%">
-              <v-card-title>{{ $t('block3.title') }}</v-card-title>
-              <v-card-text>{{ $t('block3.content') }}</v-card-text>
-              <v-card-actions>
-                <a href="/about"
-                  ><v-btn text color="teal accent-4">{{
-                    $t('learn-more')
-                  }}</v-btn></a
-                >
-              </v-card-actions>
-            </v-card>
-          </v-col>
-          <v-divider class="d-none d-md-block" vertical />
-          <v-col cols="12" md="6" lg="6" xl="6">
-            <v-card min-height="100%">
-              <v-card-title class="d-md-none d-display">{{
-                $t('block4')
-              }}</v-card-title>
-              <v-card-text style="padding-top: 15px">{{
-                $t('block4.content')
-              }}</v-card-text>
-              <v-card-actions>
-                <a href="/supporting"
-                  ><v-btn text color="teal accent-4">{{
-                    $t('learn-more')
-                  }}</v-btn></a
-                >
-              </v-card-actions>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
+  <div>
+    <div
+      class="hero min-h-[32rem] place-items-start"
+      :style="{ backgroundImage: `url(${backgroundImage})` }"
+    >
+      <div
+        class="hero-content my-2 mx-2 self-end text-primary-content bg-opacity-60 bg-primary"
+      >
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">{{ $i18n.t('hero.title') }}</h1>
+          <p>{{ $i18n.t('hero.text') }}</p>
+          <a href="/products/expidusos" class="btn btn-primary">{{
+            $i18n.t('hero.button')
+          }}</a>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center text-5xl font-bold py-8">
+      {{ $i18n.t('products-title') }}
+    </h1>
+    <div class="justify-center px-8 h-fit w-full">
+      <div
+        class="grid gap-y-4 sm:grid-cols-1 md:grid-rows-1 md:grid-cols-3 md:gap-4"
+      >
+        <div v-for="(product, i) in products" :key="i" class="card bg-primary">
+          <div class="card-body">
+            <h2 class="card-title">
+              {{ $i18n.t(`product.${product}.title`) }}
+            </h2>
+            <p>{{ $i18n.t(`product.${product}.text`) }}</p>
+            <a :href="'/products/' + product" class="btn btn-primary">{{
+              $i18n.t('hero.button')
+            }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
-<script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+<script setup lang="ts">
+import { useI18n } from '@midstallsoftware/vista/dist/runtime/composables/vista'
+import backgroundImage from '~/assets/expidus.jpg'
+import { definePageMeta } from '#imports'
 
-interface ProductNewsEntry {
-  product: string | null
-  post: string | null
-}
+const $i18n = useI18n()
 
-@Component({
-  head() {
-    return {
-      title: this.$t('page-title').toString(),
-      meta: [
-        {
-          hid: 'og:title',
-          name: 'og:title',
-          content: this.$t('full-title', {
-            page: this.$t('page-title'),
-          }).toString(),
-        },
-      ],
-    }
+const products = ['expidusos', 'cerus', 'argama']
+
+definePageMeta({
+  title: 'page.home',
+  layout: 'vs-default',
+  layoutOptions: {
+    center: false,
   },
 })
-export default class PageIndex extends Vue {
-  public readonly pnews: ProductNewsEntry[] = [
-    { product: 'expidusos', post: '2022-04-01' },
-    { product: 'argama', post: '2022-03-26' },
-  ]
+</script>
+<script lang="ts">
+export default {
+  name: 'PageIndex',
 }
 </script>
 <i18n>
 {
-	"en": {
-		"page-title": "Home",
-		"block1": "Our Products",
-		"block2": "News",
-		"block3": "Who we are",
-		"block3.title": "The power of the future",
-		"block3.content": "At Midstall Software, we’re always looking to develop better and new solutions to modern problems. We follow the FOSS philosophy as it allows a better relationship between the developers here and users.",
-		"block4": "Interested in supporting us?",
-		"block4.content": "With our software being open source, any developer who meets our needs is welcomed to contribute code. If your not a developer, you may support us on Patreon or LiberaPay.",
-		"news.2022.03.26.title": "Announcement of Cerus",
-		"news.2022.03.26.content": "We are proud to announce a new product that'll be launching soon. It is called Cerus and it is a Discord bot hosting platform. More information to come out soon.",
-		"news.2022.04.01.title": "Cerus Public Testing",
-		"news.2022.04.01.content": "Cerus is currently in the public testing phase."
-	}
+    "en": {
+        "hero": {
+            "title": "ExpidusOS",
+            "text": "The easy to use mobile and desktop operating system from Midstall Software.",
+            "button": "Learn More"
+        },
+        "products-title": "Products",
+        "product": {
+            "expidusos": {
+                "title": "ExpidusOS",
+                "text": "A mobile and desktop operating system designed for users who wish to get more out their PC."
+            },
+            "cerus": {
+                "title": "Cerus",
+                "text": "A platform to host Discord bots. It features a simple dashboard to manage each bot you wish to host."
+            },
+            "argama": {
+                "title": "Argama Network",
+                "text": "Formerly called Project Argama, this provides many cloud based services for ExpidusOS."
+            }
+        }
+    }
 }
 </i18n>
-<style>
-.image-caption {
-  margin-bottom: 32pt;
-  margin-left: 32pt;
-}
-</style>
