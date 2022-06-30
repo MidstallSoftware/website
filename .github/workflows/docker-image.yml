@@ -28,7 +28,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Kubernetes set context
-        uses: Azure/k8s-set-context@v1
+        uses: Azure/k8s-set-context@v3
         if: github.event_name != 'pull_request'
         with:
           method: kubeconfig
