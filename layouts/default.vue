@@ -282,6 +282,11 @@ export default {
           href: 'https://twitter.com/MidstallSW',
           title: '@MidstallSW',
         },
+        {
+          icon: 'slack',
+          href: 'https://join.slack.com/t/midstall-software/shared_invite/zt-1se0fjaoz-og7uqjE0IUZ9in~tUhG1jw',
+          title: 'Slack Invite',
+        },
       ].sort((a, b) => a.title.localeCompare(b.title)),
     }
   },
