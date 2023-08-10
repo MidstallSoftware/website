@@ -13,6 +13,10 @@ By using open source technologies such as Linux, Flutter, and RISC-V; we're aimi
 Founded in 2020 by Tristan Ross, we began as a small group of passionate people.
 Over the past nearly four years, we've been working on researching and developing [ExpidusOS](https://expidusos.com).
 
+## Support Us
+
+If you wish to support our efforts, you can donate to us on [Open Collective](https://opencollective.com/midstall-software).
+
 ## Meet the Team
 
 <article class="nested-copy-line-height">
