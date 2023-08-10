@@ -5,6 +5,12 @@ title = 'Midstall Software'
 [[module.imports]]
 path = 'github.com/theNewDynamic/gohugo-theme-ananke'
 
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+noClasses = false
+
 [[params.ananke_socials]]
 name = 'twitter'
 url = 'https://twitter.com/MidstallSW'
