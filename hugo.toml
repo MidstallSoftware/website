@@ -22,3 +22,19 @@ url = 'https://github.com/MidstallSoftware'
 [[params.ananke_socials]]
 name = 'slack'
 url = 'https://midstallsoftware.slack.com'
+
+[[params.ananke_socials]]
+name = 'youtube'
+url = 'https://www.youtube.com/@MidstallSoftware'
+
+[[languages.en.menu.main]]
+identifier = 'home'
+name = 'Home'
+url = '/'
+weight = 10
+
+[[languages.en.menu.main]]
+identifier = 'projects'
+name = 'Projects'
+url = '/projects'
+weight = 20
