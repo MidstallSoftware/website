@@ -44,3 +44,9 @@ identifier = 'contact'
 name = 'Contact'
 url = '/contact'
 weight = 30
+
+[[languages.en.menu.main]]
+identifier = 'blog'
+name = 'Blog'
+url = 'https://blog.midstall.com'
+weight = 40
