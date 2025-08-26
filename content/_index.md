@@ -14,6 +14,26 @@ Helping companies deliver cross-platform, reliable SDKs—powered by expert expe
 - Packaging, CI/CD, & Reproducible Builds
 - Docs & Developer Experience Optimization
 
+## Why Midstall Software?
+
+### 1. SDKs That “Just Work”
+
+Using Nix-powered reproducible builds, we eliminate environment inconsistencies—no more “but it built fine on my machine” chaos.
+
+### 2. Safe, Predictable Releases
+
+Nix ensures sandboxed builds, atomic changes, and effortless rollbacks—your SDK won’t break your clients’ workflows.
+
+### 3. Cross-Platform by Design
+
+With deep roots in LLVM and nixpkgs, we build SDKs that integrate seamlessly across embedded systems, cloud, and developer stacks.
+
+### 4. Developer-First Experience
+
+We eliminate documentation debt by delivering accurate guides, real-world samples, and intuitive APIs that developers actually enjoy using.
+
+*“Outdated or missing docs” are a leading cause of integration delays.*
+
 ## Our Mission
 
 Our mission is to spread open source and create a diverse open source ecosystem.
