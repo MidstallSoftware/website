@@ -3,7 +3,7 @@ languageCode = 'en-us'
 title = 'Midstall Software'
 
 [[module.imports]]
-path = 'github.com/theNewDynamic/gohugo-theme-ananke'
+path = 'github.com/theNewDynamic/gohugo-theme-ananke/v2'
 
 [markup.goldmark.renderer]
 unsafe = true
