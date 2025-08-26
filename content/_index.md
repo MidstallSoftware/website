@@ -5,13 +5,7 @@ cascade:
 
 ## Our Mission
 
-We're a group of passionate developers that want to see more competition in the tech ecosystem marketplace.
-By using open source technologies such as Linux, Flutter, and RISC-V; we're aiming to build our own operating system, cloud services, and hardware.
-
-## Our History
-
-Founded in 2020 by Tristan Ross, we began as a small group of passionate people.
-Over the past nearly four years, we've been working on researching and developing [ExpidusOS](https://expidusos.com).
+Our mission is to spread open source and create a diverse open source ecosystem.
 
 ## Support Us
 
