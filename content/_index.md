@@ -3,6 +3,17 @@ cascade:
   featured_image: /images/hero.jpg
 ---
 
+## We Build SDKs Developers Love to Use
+
+Helping companies deliver cross-platform, reliable SDKs—powered by expert experience in LLVM, nixpkgs, Zig, and embedded systems.
+
+## What We Do
+
+- SDK Design & Architecture (embedded, API, multi-language)
+- Cross-Compilation Toolchains (LLVM, Nix, Zig)
+- Packaging, CI/CD, & Reproducible Builds
+- Docs & Developer Experience Optimization
+
 ## Our Mission
 
 Our mission is to spread open source and create a diverse open source ecosystem.
