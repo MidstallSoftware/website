@@ -12,6 +12,7 @@ Helping companies deliver cross-platform, reliable SDKs—powered by expert expe
 - SDK Design & Architecture (embedded, API, multi-language)
 - Cross-Compilation Toolchains (LLVM, Nix, Zig)
 - Packaging, CI/CD, & Reproducible Builds
+- BSP packaging & device porting
 - Docs & Developer Experience Optimization
 
 ## Why Midstall Software?
